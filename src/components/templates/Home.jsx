@@ -1,16 +1,20 @@
 import { Header } from "../molecules/Header"
 import { Hero } from "../organisms/Hero"
 import { Work } from "../organisms/Work"
+import { About } from "../organisms/About"
+import { Contact } from "../organisms/Contact"
 
 export function Home() {
   return (
     <>
-      <div className="rainbow-bg">
-        <Header />
+      <Header />
+      <main>
         <Hero />
-      </div>
-      <main className="text-white">
-        <Work />
+        <div className="pt-36 px-4 flex flex-col gap-36">
+          <Work />
+          <About />
+          <Contact />
+        </div>
       </main>
     </>
   )

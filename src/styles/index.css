@@ -23,6 +23,7 @@
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
+  color: var(--color-text);
 }
 
 .rainbow-bg {
@@ -44,7 +45,7 @@ body {
   }
 }
 
-  .title, .logo {
+.title, .logo {
   font-family: var(--font-family-display);
   color: var(--white-color);
 }
@@ -54,18 +55,24 @@ header {
   backdrop-filter: blur(10px);
 }
 
+.hero-img {
+  box-shadow: -50px -20px 40px rgb(227 135 255 / 25%), 0px 50px 40px rgb(255 219 57 / 30%), 50px -20px 40px rgb(118 255 255 / 30%), 0 0 2pt 4pt rgb(255 255 255 / 60%);
+  border-radius: 50%;
+}
+
 .mousey {
-  width: 3px;
-  padding: 10px 15px;
-  height: 35px;
+  width: 0.1875rem;
+  padding: 0.625rem 0.9375rem;
+  height: 2.1875rem;
   border: 2px solid #fff;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
   opacity: 0.75;
   box-sizing: content-box;
 }
+
 .scroller {
-  width: 3px;
-  height: 10px;
+  width: 0.1875rem;
+  height: 0.625rem;
   border-radius: 25%;
   background-color: #fff;
   animation-name: scroll;
@@ -73,8 +80,26 @@ header {
   animation-timing-function: cubic-bezier(.15,.41,.69,.94);
   animation-iteration-count: infinite;
 }
+
 @keyframes scroll {
   0% { opacity: 0; }
   10% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(15px); opacity: 0;}
+}
+
+.work-img {
+  max-height: 16rem;
+  object-fit: cover;
+}
+
+.about-img {
+  max-height: 18.75rem;
+  margin: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    width: 100%;
+    max-width: 56rem;
+}
 }

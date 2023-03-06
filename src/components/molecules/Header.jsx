@@ -1,7 +1,7 @@
 export function Header() {
   return (
-    <header className="h-12 sm:h-16 sticky top-0 text-white">
-      <div className="container p-4 mx-auto flex justify-between h-full">
+    <header className="h-12 sm:h-16 fixed w-full top-0 text-white">
+      <div className="wrapper p-4 mx-auto flex justify-between h-full">
         <a href="#"
           className="flex items-center logo"
           aria-label="Ir al inicio de la página">
