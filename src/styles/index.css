@@ -97,6 +97,11 @@ header {
   margin: auto;
 }
 
+.contact {
+  background: rgba(72, 53, 90, 0.39);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 @media screen and (min-width: 1024px) {
   .wrapper {
     width: 100%;

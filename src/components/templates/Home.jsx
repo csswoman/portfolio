@@ -3,6 +3,7 @@ import { Hero } from "../organisms/Hero"
 import { Work } from "../organisms/Work"
 import { About } from "../organisms/About"
 import { Contact } from "../organisms/Contact"
+import { Footer } from "../molecules/Footer"
 
 export function Home() {
   return (
@@ -16,6 +17,7 @@ export function Home() {
           <Contact />
         </div>
       </main>
+      <Footer />
     </>
   )
 }
