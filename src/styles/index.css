@@ -102,6 +102,43 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.work-exp::before {
+  content: "";
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  display: block;
+  left: 0;
+  top: 0.5rem;
+  position: absolute;
+  background-color: #c779d0;
+}
+
+.work-exp::after {
+  content: "";
+  width: 1px;
+  background-color: #c779d0;
+  height: calc(100% + 1rem);
+  display: block;
+  left: 3.5px;
+  top: 1rem;
+  position: absolute;
+}
+
+.d-cv::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 3.5px;
+  border-color: #c779d0;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+  border-bottom-left-radius: 0.5rem;
+  width: calc(4rem - 3.5px);
+  height: 1.25rem;
+
+}
+
 @media screen and (min-width: 1024px) {
   .wrapper {
     width: 100%;

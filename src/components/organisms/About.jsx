@@ -1,4 +1,5 @@
 import aboutImage from '../../assets/images/4.jpg'
+import { WorkExperience } from './WorkExperience'
 
 export function About() {
     return (
@@ -26,7 +27,7 @@ export function About() {
             <div className="grid md:grid-cols-2 gap-8">
                 <article>
                     <h3 className="title text-3xl mb-4">Experiencia</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit tellus, hendrerit in pellentesque ut, dignissim quis sapien. Nunc ex turpis, placerat et ipsum vitae, blandit facilisis tellus. Praesent ipsum ipsum, congue vitae nisl in, porta luctus leo. Nulla facilisi. Nullam tristique ligula magna, sit amet scelerisque nisl vulputate non. Proin ac mattis leo, eu elementum lorem. Donec egestas sagittis fermentum. Aliquam id dolor quis lacus rutrum condimentum. Maecenas rhoncus sed ante eget placerat. Nullam lacinia sollicitudin turpis at venenatis. Mauris et arcu lobortis, posuere velit ut, tincidunt risus. Donec a nulla facilisis, auctor ligula ut, egestas ipsum.</p>
+                    <WorkExperience />
                 </article>
                 <div>
                     <article>

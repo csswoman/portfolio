@@ -3,7 +3,7 @@ import contactImage from '../../assets/images/3.jpg'
 
 export function Contact() {
     return (
-        <section className="wrapper mx-auto flex flex-col items-center mb-4" id="contact">
+        <section className="wrapper mx-auto flex flex-col items-center mb-4 text-sm sm:text-base" id="contact">
             <h2 className="title text-4xl mb-4 md:mb-10 text-center">¡Trabajemos juntos!</h2>
             <div className="grid md:grid-cols-2 gap-8 mb-16">
                 <div className='mx-auto'>
