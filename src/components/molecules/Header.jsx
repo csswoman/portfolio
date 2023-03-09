@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <header className="h-12 sm:h-16 fixed w-full top-0 text-white">
+    <header className="h-12 sm:h-16 fixed w-full top-0 text-white z-10">
       <div className="flex wrapper p-4 mx-auto justify-between h-full">
         <a href="#"
           className="hidden sm:flex items-center logo"
