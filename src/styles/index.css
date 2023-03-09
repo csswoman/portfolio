@@ -153,3 +153,53 @@ header {
     max-width: 56rem;
 }
 }
+
+.tooltip-toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+.tooltip-toggle::before {
+  position: absolute;
+  top: -34px;
+  left: -25px;
+  background-color: #9200ac;
+  border-radius: 5px;
+  color: #fff;
+  content: attr(aria-label);
+  padding: 0.2rem;
+  text-transform: none;
+  transition: all 0.5s ease;
+  width: 75px;
+}
+
+.tooltip-toggle::after {
+  position: absolute;
+  top: -9px;
+  left: 14px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #9200ac;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+  margin-left: -5px;
+  width: 0;
+}
+
+.tooltip-toggle::before,
+.tooltip-toggle::after {
+  color: #fff;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+}
+
+.tooltip-toggle:focus::before,
+.tooltip-toggle:focus::after,
+.tooltip-toggle:hover::before,
+.tooltip-toggle:hover::after {
+  opacity: 1;
+  transition: all 0.75s ease;
+}

@@ -5,13 +5,13 @@ import git from '../../assets/icons/git.svg'
 export function Tools() {
     return (
         <ul className="flex gap-4 flex-wrap">
-            <li>
+            <li className="tooltip-toggle" aria-label="Figma" tabIndex="0">
                 <img src={figma} alt="figma" />
             </li>
-            <li>
+            <li className="tooltip-toggle" aria-label="Notion" tabIndex="0">
                 <img src={notion} alt="notion" />
             </li>
-            <li>
+            <li className="tooltip-toggle" aria-label="Git" tabIndex="0">
                 <img src={git} alt="git" />
             </li>
         </ul>
