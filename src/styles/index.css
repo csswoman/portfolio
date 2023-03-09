@@ -9,7 +9,15 @@
   src: url('../assets/fonts/recoleta-bold.ttf');
   font-weight: bold;
   font-style: normal;
+}
 
+*,:after,:before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 :root {

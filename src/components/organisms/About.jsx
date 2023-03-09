@@ -1,6 +1,9 @@
 import aboutImage from '../../assets/images/4.jpg'
 import { Educacion } from './Education'
+import { Tools } from './Tools'
+import { Skills } from './Skills'
 import { WorkExperience } from './WorkExperience'
+import { Languages } from '../molecules/Languages'
 
 export function About() {
     return (
@@ -30,19 +33,23 @@ export function About() {
                     <h3 className="title text-3xl mb-4">Experiencia</h3>
                     <WorkExperience />
                 </article>
-                <div className="grid gap-8">
+                <div className="flex flex-col gap-8">
                     <article>
                         <h3 className="title text-3xl mb-4">Educación</h3>
                         <Educacion />
                     </article>
                     <article>
                         <h3 className="title text-3xl mb-4">Habilidades</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit tellus, hendrerit in pellentesque ut, dignissim quis sapien. Nunc ex turpis, placerat et ipsum vitae, blandit facilisis tellus. Praesent ipsum ipsum, congue vitae nisl in, porta luctus leo. Nulla facilisi. Nullam tristique ligula magna, sit amet scelerisque nisl vulputate non.
-                        </p>
+                        <Skills />
                     </article>
-                    <h3 className="title text-3xl mb-4">Herramientas</h3>
-                    <h3 className="title text-3xl mb-4">Idiomas</h3>
+                    <article>
+                        <h3 className="title text-3xl mb-4">Herramientas</h3>
+                        <Tools />
+                    </article>
+                    <article>
+                        <h3 className="title text-3xl mb-4">Idiomas</h3>
+                        <Languages />
+                    </article>
                 </div>
             </div>
         </section>
