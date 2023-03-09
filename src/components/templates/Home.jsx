@@ -11,7 +11,7 @@ export function Home() {
       <Header />
       <main>
         <Hero />
-        <div className="pt-36 px-4 flex flex-col gap-36">
+        <div className="pt-20 lg:pt-32 px-4 flex flex-col gap-20 lg:gap-32">
           <Work />
           <About />
           <Contact />

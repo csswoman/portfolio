@@ -1,5 +1,6 @@
 import coffee from '../../assets/images/projects/coffee.jpg'
 import travels from '../../assets/images/projects/travels.jpg'
+import celeste from '../../assets/images/projects/celeste.jpg'
 
 export function Work() {
     return (
@@ -35,6 +36,21 @@ export function Work() {
                         />
                         <p className="font-bold text-lg">Travels and Tours</p>
                         <p>Creado con HTML & CSS</p>
+                    </article>
+                </a>
+                <a
+                    href="https://celeste-art-shop.vercel.app/"
+                    target={"_blank"}
+                    className="p-4 rounded-xl bg-transparent hover:bg-white hover:bg-opacity-10"
+                >
+                    <article>
+                        <img
+                            src={celeste}
+                            alt="Celeste project"
+                            className="rounded-xl mb-4 aspect-[16/9]"
+                        />
+                        <p className="font-bold text-lg">Celeste Art Shop</p>
+                        <p>Creado con Bootstrap</p>
                     </article>
                 </a>
             </div >
