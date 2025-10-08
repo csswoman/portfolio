@@ -7,10 +7,31 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+
+# Next.js
+.next
+out
+build
+next-env.d.ts
+
+# Vite
 dist
 dist-ssr
 *.local
+
+# Storybook
+storybook-static
+
+# TypeScript
+*.tsbuildinfo
+
+# Documentación interna (solo README.md es público)
+PERFORMANCE.md
+TYPESCRIPT-SEO-STORYBOOK.md
+OPTIMIZACIONES-IMPLEMENTADAS.md
+MEJORAS.md
 
 # Editor directories and files
 .vscode/*
