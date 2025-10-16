@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   
+  // Configuración de internacionalización
+  i18n: {
+    locales: ['es', 'en'],
+    defaultLocale: 'es',
+  },
+  
   // Optimizaciones de rendimiento
   compiler: {
     // Remover console.log en producción

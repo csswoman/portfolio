@@ -1,0 +1,47 @@
+{
+  "Header": {
+    "work": "Mi trabajo",
+    "about": "Sobre mí",
+    "contact": "¡Hablemos!",
+    "goToHome": "Ir al inicio de la página"
+  },
+  "Hero": {
+    "greeting": "Hey, soy",
+    "role": "UX Engineer",
+    "description": "Como <role></role> creo interfaces que se sienten naturales, inclusivas y llenas de vida.",
+    "description2": "Combino la intuición del diseño con la precisión del código para crear experiencias digitales que simplemente se sienten bien.",
+    "scrollDown": "Ir a la sección de trabajos"
+  },
+  "Work": {
+    "title": "Mi Trabajo",
+    "subtitle": "Una muestra de mi proceso creativo: desde la idea hasta el producto terminado.",
+    "viewProject": "Ver proyecto",
+    "technologies": "Tecnologías"
+  },
+  "About": {
+    "title": "Sobre Mí",
+    "description": "Descripción sobre ti",
+    "skills": "Habilidades",
+    "tools": "Herramientas",
+    "languages": "Idiomas",
+    "education": "Educación",
+    "experience": "Experiencia"
+  },
+  "Contact": {
+    "title": "¡Hablemos!",
+    "description": "¿Tienes un proyecto en mente? Contáctame",
+    "email": "Correo electrónico",
+    "social": "Redes sociales"
+  },
+  "Footer": {
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "by": "por"
+  },
+  "Error": {
+    "notFound": "Página no encontrada",
+    "serverError": "Ha ocurrido un error en el servidor",
+    "goHome": "Volver al inicio"
+  }
+}
+

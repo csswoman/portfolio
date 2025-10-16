@@ -1,0 +1,46 @@
+{
+  "Header": {
+    "work": "My Work",
+    "about": "About Me",
+    "contact": "Let's Talk!",
+    "goToHome": "Go to home page"
+  },
+  "Hero": {
+    "greeting": "Hey, I'm",
+    "role": "UX Engineer",
+    "description": "A <role></role>, who blends creativity and code to craft immersive, detail-driven interfaces. I turn ideas into living experiences — beautiful, fast, and built with purpose.",
+    "description2": "I combine the intuition of design with the precision of code to create digital experiences that simply feel good.",
+    "scrollDown": "Go to the work section"
+  },
+  "Work": {
+    "title": "My Work",
+    "viewProject": "View project",
+    "technologies": "Technologies"
+  },
+  "About": {
+    "title": "About Me",
+    "description": "Description about you",
+    "skills": "Skills",
+    "tools": "Tools",
+    "languages": "Languages",
+    "education": "Education",
+    "experience": "Experience"
+  },
+  "Contact": {
+    "title": "Let's Talk!",
+    "description": "Have a project in mind? Contact me",
+    "email": "Email",
+    "social": "Social media"
+  },
+  "Footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by"
+  },
+  "Error": {
+    "notFound": "Page not found",
+    "serverError": "A server error occurred",
+    "goHome": "Go back home"
+  }
+}
+

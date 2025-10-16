@@ -6,6 +6,7 @@ import {
   AboutSection,
   ContactSection,
 } from "@/components/sections";
+import { GetStaticPropsContext } from 'next';
 
 export default function Home() {
   return (
@@ -26,5 +27,14 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../messages/${locale}.json`)).default,
+      locale,
+    },
+  };
 }
 
