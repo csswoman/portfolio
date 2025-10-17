@@ -148,3 +148,9 @@ export const personalInfo: PersonalInfo = {
   contactImage: "/images/3.jpg",
 };
 
+// Rutas de CV por idioma
+export const cvPaths = {
+  es: "/cv/CV-Karla-Agraz-ES.pdf",
+  en: "/cv/CV-Karla-Agraz-EN.pdf",
+};
+

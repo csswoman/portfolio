@@ -33,6 +33,11 @@ TYPESCRIPT-SEO-STORYBOOK.md
 OPTIMIZACIONES-IMPLEMENTADAS.md
 MEJORAS.md
 
+# CVs privados (mantener fuera del repositorio por privacidad)
+public/cv/*.pdf
+# Pero mantener el README de instrucciones
+!public/cv/README.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

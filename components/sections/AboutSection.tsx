@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import {
   ExperienceCard,
@@ -7,12 +8,23 @@ import {
   ToolsList,
   LanguagesList,
 } from "@/components/ui";
-import { personalInfo, getWorkExperience, getEducation } from "@/lib/constants";
+import { personalInfo, getWorkExperience, getEducation, cvPaths } from "@/lib/constants";
+import { trackCVDownload } from "@/lib/analytics";
 
 export function AboutSection() {
   const t = useTranslations();
+  const router = useRouter();
   const workExperience = getWorkExperience(t);
   const education = getEducation(t);
+  
+  // Obtener el idioma actual para seleccionar el CV correcto
+  const currentLocale = (router.locale || "es") as keyof typeof cvPaths;
+  const cvPath = cvPaths[currentLocale];
+
+  // Función para manejar la descarga del CV
+  const handleCVDownload = () => {
+    trackCVDownload(currentLocale);
+  };
 
   return (
     <section className="wrapper mx-auto flex flex-col items-center" id="about">
@@ -52,9 +64,11 @@ export function AboutSection() {
           </ul>
           <div className="pl-16 pt-8 relative d-cv">
             <a
-              href="#"
+              href={cvPath}
+              download
               target="_blank"
               rel="noreferrer"
+              onClick={handleCVDownload}
               className="font-semibold text-sm py-2 px-3 text-purple-400 border rounded-lg border-purple-400 hover:bg-purple-400 hover:text-white transition-all"
             >
               {t("About.downloadCV")}
