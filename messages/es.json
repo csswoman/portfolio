@@ -14,22 +14,26 @@
   },
   "Work": {
     "title": "Mi Trabajo",
-    "subtitle": "Una muestra de mi proceso creativo: desde la idea hasta el producto terminado.",
+    "subtitle": "Donde el diseño cobra vida a través del código.",
     "viewProject": "Ver proyecto",
     "technologies": "Tecnologías"
   },
   "About": {
-    "title": "Sobre Mí",
-    "description": "Descripción sobre ti",
+    "title": "Acerca de mi",
+    "subtitle": "La compañera de trabajo más creativa 💻",
+    "description1": "UX Engineer con más de 4 años de experiencia construyendo experiencias digitales modernas y centradas en las personas.",
+    "description2": "Me apasiona convertir ideas en productos usables, donde diseño y código trabajan en armonía.",
+    "description3": "🌱 Siempre aprendiendo e inspirada por los videojuegos y sus interfaces.",
     "skills": "Habilidades",
     "tools": "Herramientas",
     "languages": "Idiomas",
     "education": "Educación",
-    "experience": "Experiencia"
+    "experience": "Experiencia",
+    "downloadCV": "Descarga mi CV"
   },
   "Contact": {
-    "title": "¡Hablemos!",
-    "description": "¿Tienes un proyecto en mente? Contáctame",
+    "title": "¡Trabajemos juntos!",
+    "description": "¿Tienes alguna idea de proyecto? ¿Necesitas ayuda con diseño UI o maquetación? o ¿Simplemente quieres conversar? Estaré feliz de contestar.",
     "email": "Correo electrónico",
     "social": "Redes sociales"
   },
@@ -42,6 +46,79 @@
     "notFound": "Página no encontrada",
     "serverError": "Ha ocurrido un error en el servidor",
     "goHome": "Volver al inicio"
+  },
+  "Projects": {
+    "1": {
+      "title": "Café Bistro",
+      "description": "Creado con HTML & CSS"
+    },
+    "2": {
+      "title": "Travels and Tours",
+      "description": "Creado con HTML & CSS"
+    },
+    "3": {
+      "title": "Celeste Art Shop",
+      "description": "Creado con Bootstrap"
+    }
+  },
+  "Experience": {
+    "1": {
+      "title": "Software Engineer",
+      "company": "Cultivate",
+      "period": "Abr 2023 - Actualidad",
+      "description": "1. Desarrollé y optimicé interfaces con React y TypeScript, garantizando precisión visual y escalabilidad.\n2. Participé en la creación de una nueva plataforma para clientes, integrando Laravel al flujo de trabajo frontend.\n3. Implementé emails responsivos y componentes UI alineados con las guías de diseño.\n4. Colaboré estrechamente con el equipo de diseño para lograr interfaces pixel-perfect."
+    },
+    "2": {
+      "title": "Web Designer",
+      "company": "Uniqo Agency",
+      "period": "Nov 2022 - Sept 2023",
+      "description": "1. Diseñé y personalicé interfaces para sitios WordPress, adaptando temas y estilos según los requerimientos del cliente.\n2. Integré y configuré plugins para ampliar funcionalidades sin comprometer el rendimiento.\n3. Brindé mentorías 1:1 a estudiantes sobre fundamentos de HTML, CSS y JavaScript.\n4. Asistí en la maquetación de componentes y la mejora de usabilidad en HubSpot."
+    },
+    "3": {
+      "title": "Web UI Developer",
+      "company": "Denomades",
+      "period": "May 2021 - Ago 2022 (1 año y 4 meses)",
+      "description": "1. Desarrollé y mantuve funcionalidades en múltiples plataformas internas.\n2. Participé en procesos de migración y mejora del código base.\n3. Mejoré la UX del sitio principal, alcanzando una puntuación de 100 en accesibilidad (Lighthouse).\n4. Diseñé mockups UX/UI en papel y Figma para guiar el desarrollo.\n5. Documenté nuevos componentes UI en la guía de estilos (botones, menús, inputs, etc.).\n6. Brindé soporte técnico a otros equipos de la empresa."
+    },
+    "4": {
+      "title": "Freelance Web Designer",
+      "company": "Freelancer",
+      "period": "Dic 2021 - Mar 2022 (4 meses)",
+      "description": "1. Desarrollé sitios web y componentes con React y HTML/CSS para clientes internacionales.\n2. Optimicé rendimiento y compatibilidad entre navegadores.\n3. Colaboré directamente con clientes para diseñar experiencias personalizadas y usables."
+    },
+    "5": {
+      "title": "Maquetadora Web",
+      "company": "EDteam",
+      "period": "Nov 2020 - Ene 2021 (3 meses)",
+      "description": "1. Maqueté componentes visuales basados en diseños existentes.\n2. Detecté y corregí errores de maquetación asegurando consistencia visual.\n3. Apoyé la traducción de diseños en interfaces funcionales."
+    }
+  },
+  "Education": {
+    "1": {
+      "title": "Programa de Frontend de Facebook Developers Circles",
+      "institution": "Platzi",
+      "period": "2019 - 2020"
+    },
+    "2": {
+      "title": "Responsive Web Design Certification",
+      "institution": "freeCodeCamp",
+      "period": "2020 - 2021"
+    },
+    "3": {
+      "title": "Bootcamp de Front-End",
+      "institution": "Front-End Foxes School",
+      "period": "2021 - 2021"
+    }
+  },
+  "Languages": {
+    "spanish": {
+      "name": "Español",
+      "level": "nativo"
+    },
+    "english": {
+      "name": "Inglés",
+      "level": "B1"
+    }
   }
 }
 

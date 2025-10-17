@@ -14,21 +14,26 @@
   },
   "Work": {
     "title": "My Work",
+    "subtitle": "Where design comes to life through code.",
     "viewProject": "View project",
     "technologies": "Technologies"
   },
   "About": {
     "title": "About Me",
-    "description": "Description about you",
+    "subtitle": "The most creative coworker 💻",
+    "description1": "UX Engineer with over 4 years of experience building modern, people-centered digital experiences.",
+    "description2": "I'm passionate about turning ideas into usable products, where design and code work in harmony.",
+    "description3": "🌱 Always learning and inspired by video games and their interfaces.",
     "skills": "Skills",
     "tools": "Tools",
     "languages": "Languages",
     "education": "Education",
-    "experience": "Experience"
+    "experience": "Experience",
+    "downloadCV": "Download my CV"
   },
   "Contact": {
-    "title": "Let's Talk!",
-    "description": "Have a project in mind? Contact me",
+    "title": "Let's Work Together!",
+    "description": "Do you have a project idea? Need help with UI design or layout? Or simply want to chat? I'll be happy to respond.",
     "email": "Email",
     "social": "Social media"
   },
@@ -41,6 +46,79 @@
     "notFound": "Page not found",
     "serverError": "A server error occurred",
     "goHome": "Go back home"
+  },
+  "Projects": {
+    "1": {
+      "title": "Café Bistro",
+      "description": "Built with HTML & CSS"
+    },
+    "2": {
+      "title": "Travels and Tours",
+      "description": "Built with HTML & CSS"
+    },
+    "3": {
+      "title": "Celeste Art Shop",
+      "description": "Built with Bootstrap"
+    }
+  },
+  "Experience": {
+    "1": {
+      "title": "Software Engineer",
+      "company": "Cultivate",
+      "period": "Apr 2023 - Present",
+      "description": "1. Developed and optimized interfaces with React and TypeScript, ensuring visual precision and scalability.\n2. Participated in creating a new client platform, integrating Laravel into the frontend workflow.\n3. Implemented responsive emails and UI components aligned with design guidelines.\n4. Collaborated closely with the design team to achieve pixel-perfect interfaces."
+    },
+    "2": {
+      "title": "Web Designer",
+      "company": "Uniqo Agency",
+      "period": "Nov 2022 - Sept 2023",
+      "description": "1. Designed and customized interfaces for WordPress sites, adapting themes and styles according to client requirements.\n2. Integrated and configured plugins to expand functionality without compromising performance.\n3. Provided 1:1 mentoring to students on HTML, CSS, and JavaScript fundamentals.\n4. Assisted in component layout and usability improvement in HubSpot."
+    },
+    "3": {
+      "title": "Web UI Developer",
+      "company": "Denomades",
+      "period": "May 2021 - Aug 2022 (1 year and 4 months)",
+      "description": "1. Developed and maintained features across multiple internal platforms.\n2. Participated in migration processes and codebase improvements.\n3. Enhanced UX of the main site, achieving a score of 100 in accessibility (Lighthouse).\n4. Designed UX/UI mockups on paper and Figma to guide development.\n5. Documented new UI components in the style guide (buttons, menus, inputs, etc.).\n6. Provided technical support to other company teams."
+    },
+    "4": {
+      "title": "Freelance Web Designer",
+      "company": "Freelancer",
+      "period": "Dec 2021 - Mar 2022 (4 months)",
+      "description": "1. Developed websites and components with React and HTML/CSS for international clients.\n2. Optimized performance and cross-browser compatibility.\n3. Collaborated directly with clients to design personalized and usable experiences."
+    },
+    "5": {
+      "title": "Web Layout Developer",
+      "company": "EDteam",
+      "period": "Nov 2020 - Jan 2021 (3 months)",
+      "description": "1. Created visual components based on existing designs.\n2. Detected and corrected layout errors ensuring visual consistency.\n3. Supported translation of designs into functional interfaces."
+    }
+  },
+  "Education": {
+    "1": {
+      "title": "Facebook Developers Circles Frontend Program",
+      "institution": "Platzi",
+      "period": "2019 - 2020"
+    },
+    "2": {
+      "title": "Responsive Web Design Certification",
+      "institution": "freeCodeCamp",
+      "period": "2020 - 2021"
+    },
+    "3": {
+      "title": "Front-End Bootcamp",
+      "institution": "Front-End Foxes School",
+      "period": "2021 - 2021"
+    }
+  },
+  "Languages": {
+    "spanish": {
+      "name": "Spanish",
+      "level": "native"
+    },
+    "english": {
+      "name": "English",
+      "level": "B1"
+    }
   }
 }
 

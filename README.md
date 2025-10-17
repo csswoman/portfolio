@@ -353,7 +353,7 @@ npm run build
 
 ## 📄 Licencia
 
-© 2023 Karla Agraz
+© 2025 Karla Agraz
 
 ---
 

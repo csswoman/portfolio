@@ -9,89 +9,101 @@ import type {
   PersonalInfo,
 } from "@/types";
 
-// Datos de proyectos
-export const projects: Project[] = [
+// ============================================
+// DATOS FIJOS (no traducibles)
+// ============================================
+
+// IDs y URLs de proyectos (datos estáticos)
+export const projectsData = [
   {
     id: 1,
-    title: "Café Bistro",
-    description: "Creado con HTML & CSS",
     image: "/images/projects/coffee.jpg",
     url: "https://csswoman.github.io/cafe-bistro/",
   },
   {
     id: 2,
-    title: "Travels and Tours",
-    description: "Creado con HTML & CSS",
     image: "/images/projects/travels.jpg",
     url: "https://csswoman.github.io/travel-and-tours/",
   },
   {
     id: 3,
-    title: "Celeste Art Shop",
-    description: "Creado con Bootstrap",
     image: "/images/projects/celeste.jpg",
     url: "https://celeste-art-shop.vercel.app/",
   },
 ];
 
-// Experiencia laboral
-export const workExperience: WorkExperience[] = [
-  {
-    id: 1,
-    title: "Diseñadora web",
-    company: "Uniqo agency",
-    period: "Nov 2022 - Feb 2023 (4 meses)",
-    description:
-      "Entre las labores que realicé fueron: editar plantillas de WordPress, integración de plugins maquetación de componentes en HubSpot.",
-  },
-  {
-    id: 2,
-    title: "Web UI Developer",
-    company: "Denomades",
-    period: "May 2021 - Ago 2022 (1 año y 4 meses)",
-    description:
-      "Entre las labores que realicé fueron: Desarrollar y corregir funcionalidades en las diferentes plataformas de la empresa, Participar en procesos de migración de las diferentes plataformas de la empresa, Mejorar la UX del website con puntuación de 100 en accesibilidad en Lighthouse, Diseñar mockups en papel para determinar la UX/UI, Agregar los nuevos UI componentes a la guía de estilos del proyecto (ej. botones, inputs, menús, etc.), Dar soporte tecnológico al resto de áreas de la empresa.",
-  },
-  {
-    id: 3,
-    title: "Diseñadora web",
-    company: "Freelancer",
-    period: "Dic 2021 - Mar 2022 (4 meses)",
-    description: "Desarrollo de sitios web con React para clientes extranjeros.",
-  },
-  {
-    id: 4,
-    title: "Maquetadora web",
-    company: "EDteam",
-    period: "Nov 2020 - Ene 2021 (3 meses)",
-    description:
-      "Maquetación de componentes, detectar errores en la maquetación y corregirlos.",
-  },
-];
+// IDs de experiencia laboral
+export const workExperienceIds = [1, 2, 3, 4, 5];
 
-// Educación
-export const education: Education[] = [
-  {
-    id: 1,
-    title: "Programa de Frontend de Facebook Developers Circles",
-    institution: "Platzi",
-    period: "2019 - 2020",
-  },
-  {
-    id: 2,
-    title: "Responsive Web Design Certification",
-    institution: "freeCodeCamp",
-    period: "2020 - 2021",
-  },
-  {
-    id: 3,
-    title: "Bootcamp de Front-End",
-    institution: "Front-End Foxes School",
-    period: "2021 - 2021",
-  },
-];
+// IDs de educación
+export const educationIds = [1, 2, 3];
 
-// Habilidades técnicas
+// IDs de idiomas
+export const languageIds = ["spanish", "english"] as const;
+
+// ============================================
+// FUNCIONES PARA OBTENER DATOS TRADUCIDOS
+// ============================================
+
+/**
+ * Obtiene la lista de proyectos con traducciones
+ * @param t - Función de traducción de next-intl
+ * @returns Array de proyectos traducidos
+ */
+export const getProjects = (t: any): Project[] => {
+  return projectsData.map((project) => ({
+    ...project,
+    title: t(`Projects.${project.id}.title`),
+    description: t(`Projects.${project.id}.description`),
+  }));
+};
+
+/**
+ * Obtiene la lista de experiencia laboral con traducciones
+ * @param t - Función de traducción de next-intl
+ * @returns Array de experiencias traducidas
+ */
+export const getWorkExperience = (t: any): WorkExperience[] => {
+  return workExperienceIds.map((id) => ({
+    id,
+    title: t(`Experience.${id}.title`),
+    company: t(`Experience.${id}.company`),
+    period: t(`Experience.${id}.period`),
+    description: t(`Experience.${id}.description`),
+  }));
+};
+
+/**
+ * Obtiene la lista de educación con traducciones
+ * @param t - Función de traducción de next-intl
+ * @returns Array de educación traducida
+ */
+export const getEducation = (t: any): Education[] => {
+  return educationIds.map((id) => ({
+    id,
+    title: t(`Education.${id}.title`),
+    institution: t(`Education.${id}.institution`),
+    period: t(`Education.${id}.period`),
+  }));
+};
+
+/**
+ * Obtiene la lista de idiomas con traducciones
+ * @param t - Función de traducción de next-intl
+ * @returns Array de idiomas traducidos
+ */
+export const getLanguages = (t: any): Language[] => {
+  return languageIds.map((id) => ({
+    name: t(`Languages.${id}.name`),
+    level: t(`Languages.${id}.level`),
+  }));
+};
+
+// ============================================
+// DATOS QUE NO REQUIEREN TRADUCCIÓN
+// ============================================
+
+// Habilidades técnicas (nombres de tecnologías)
 export const skills: Skill[] = [
   { name: "HTML", icon: "/icons/html.svg", width: 29, height: 32 },
   { name: "CSS", icon: "/icons/css.svg", width: 27, height: 32 },
@@ -99,20 +111,14 @@ export const skills: Skill[] = [
   { name: "Tailwind", icon: "/icons/tailwind.svg", width: 42, height: 38 },
 ];
 
-// Herramientas
+// Herramientas (nombres de software)
 export const tools: Tool[] = [
   { name: "Figma", icon: "/icons/figma.svg" },
   { name: "Notion", icon: "/icons/notion.svg" },
   { name: "Git", icon: "/icons/git.svg" },
 ];
 
-// Idiomas
-export const languages: Language[] = [
-  { name: "Español", level: "nativo" },
-  { name: "Inglés", level: "A2" },
-];
-
-// Redes sociales
+// Redes sociales (datos fijos)
 export const socialLinks: SocialLink[] = [
   {
     name: "Twitter",
@@ -131,7 +137,7 @@ export const socialLinks: SocialLink[] = [
   },
 ];
 
-// Información personal
+// Información personal (datos fijos)
 export const personalInfo: PersonalInfo = {
   name: "Karla Agraz",
   username: "@csswoman",

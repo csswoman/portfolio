@@ -1,15 +1,18 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { SocialLinks } from "@/components/ui";
 import { personalInfo } from "@/lib/constants";
 
 export function ContactSection() {
+  const t = useTranslations("Contact");
+
   return (
     <section
       className="wrapper mx-auto flex flex-col items-center mb-4 text-sm sm:text-base"
       id="contact"
     >
       <h2 className="title text-4xl mb-4 md:mb-10 text-center">
-        ¡Trabajemos juntos!
+        {t("title")}
       </h2>
       <div className="grid md:grid-cols-2 gap-8 mb-16">
         <div className="mx-auto">
@@ -23,9 +26,7 @@ export function ContactSection() {
         </div>
         <article className="contact text-center px-6 py-4 rounded-lg">
           <p className="mb-6">
-            ¿Tienes alguna idea de proyecto? ¿Necesitas ayuda con diseño UI o
-            maquetación? o ¿Simplemente quieres conversar? Estaré feliz de
-            contestar.
+            {t("description")}
           </p>
           <a
             href={`mailto:${personalInfo.email}`}
