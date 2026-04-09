@@ -10,7 +10,10 @@
     "role": "UX Engineer",
     "description": "Como <role></role> creo interfaces que se sienten naturales, inclusivas y llenas de vida.",
     "description2": "Combino la intuición del diseño con la precisión del código para crear experiencias digitales que simplemente se sienten bien.",
-    "scrollDown": "Ir a la sección de trabajos"
+    "scrollDown": "Ir a la sección de trabajos",
+    "status": "Abierta a nuevos proyectos",
+    "getInTouch": "Contáctame",
+    "viewWork": "Ver experiencia"
   },
   "Work": {
     "title": "Mi Trabajo",
@@ -29,13 +32,17 @@
     "languages": "Idiomas",
     "education": "Educación",
     "experience": "Experiencia",
-    "downloadCV": "Descarga mi CV"
+    "downloadCV": "Descarga mi CV",
+    "yearsExperience": "Años de Experiencia",
+    "projectsCompleted": "Proyectos Completados",
+    "clientSatisfaction": "Satisfacción del Cliente"
   },
   "Contact": {
     "title": "¡Trabajemos juntos!",
     "description": "¿Tienes alguna idea de proyecto? ¿Necesitas ayuda con diseño UI o maquetación? o ¿Simplemente quieres conversar? Estaré feliz de contestar.",
     "email": "Correo electrónico",
-    "social": "Redes sociales"
+    "social": "Redes sociales",
+    "elsewhere": "Otros lugares"
   },
   "Footer": {
     "rights": "Todos los derechos reservados",
@@ -119,6 +126,11 @@
       "name": "Inglés",
       "level": "B1"
     }
+  },
+  "Journal": {
+    "title": "Diario",
+    "post1Title": "Próximamente...",
+    "post1Excerpt": "Estoy trabajando en algunos temas interesantes para compartir contigo"
   }
 }
 

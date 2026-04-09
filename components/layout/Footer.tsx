@@ -1,7 +1,9 @@
 export function Footer() {
   return (
-    <footer className="text-center pb-8 text-white text-sm">
-      <p>© 2025 by Karla Agraz</p>
+    <footer className="footer container">
+      <p>
+        Built with <span className="heart">★</span> and attention to detail
+      </p>
     </footer>
   );
 }

@@ -10,7 +10,10 @@
     "role": "UX Engineer",
     "description": "A <role></role>, who blends creativity and code to craft immersive, detail-driven interfaces. I turn ideas into living experiences — beautiful, fast, and built with purpose.",
     "description2": "I combine the intuition of design with the precision of code to create digital experiences that simply feel good.",
-    "scrollDown": "Go to the work section"
+    "scrollDown": "Go to the work section",
+    "status": "Open to new projects",
+    "getInTouch": "Get in touch",
+    "viewWork": "View experience"
   },
   "Work": {
     "title": "My Work",
@@ -29,13 +32,17 @@
     "languages": "Languages",
     "education": "Education",
     "experience": "Experience",
-    "downloadCV": "Download my CV"
+    "downloadCV": "Download my CV",
+    "yearsExperience": "Years of Experience",
+    "projectsCompleted": "Projects Completed",
+    "clientSatisfaction": "Client Satisfaction"
   },
   "Contact": {
     "title": "Let's Work Together!",
     "description": "Do you have a project idea? Need help with UI design or layout? Or simply want to chat? I'll be happy to respond.",
     "email": "Email",
-    "social": "Social media"
+    "social": "Social media",
+    "elsewhere": "Elsewhere"
   },
   "Footer": {
     "rights": "All rights reserved",
@@ -119,6 +126,11 @@
       "name": "English",
       "level": "B1"
     }
+  },
+  "Journal": {
+    "title": "Journal",
+    "post1Title": "Coming soon...",
+    "post1Excerpt": "I am working on some interesting topics to share with you"
   }
 }
 
