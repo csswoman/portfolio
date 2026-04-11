@@ -1,14 +1,13 @@
-import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/router';
+import { useTranslations, useLocale } from 'next-intl';
 import { getWorkExperience, cvPaths } from '@/lib/constants';
 import { trackCVDownload } from '@/lib/analytics';
 
 export function AboutSection() {
   const t = useTranslations();
-  const router = useRouter();
+  const locale = useLocale();
   const workExperience = getWorkExperience(t);
 
-  const currentLocale = (router.locale || 'es') as keyof typeof cvPaths;
+  const currentLocale = (locale || 'es') as keyof typeof cvPaths;
   const cvPath = cvPaths[currentLocale];
 
   const handleCVDownload = () => {

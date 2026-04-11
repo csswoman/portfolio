@@ -1,9 +1,11 @@
 export function Footer() {
   return (
-    <footer className="footer container">
-      <p>
-        Built with <span className="heart">★</span> and attention to detail
-      </p>
+    <footer className="my-10">
+      <div className="container">
+        <div className="footer-content">
+          KARLA AGRAZ © 2026
+        </div>
+      </div>
     </footer>
   );
 }

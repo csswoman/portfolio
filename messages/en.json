@@ -6,14 +6,14 @@
     "goToHome": "Go to home page"
   },
   "Hero": {
-    "greeting": "Hey, I'm",
-    "role": "UX Engineer",
-    "description": "A <role></role>, who blends creativity and code to craft immersive, detail-driven interfaces. I turn ideas into living experiences — beautiful, fast, and built with purpose.",
-    "description2": "I combine the intuition of design with the precision of code to create digital experiences that simply feel good.",
-    "scrollDown": "Go to the work section",
-    "status": "Open to new projects",
-    "getInTouch": "Get in touch",
-    "viewWork": "View experience"
+    "greeting": "Hi, I'm",
+    "role": "UI ENGINEER FOCUSED ON UX EXPERIENCE.",
+    "description": "Building interfaces that feel like a natural extension of your product — fast, precise, and crafted with attention to every detail.",
+    "description2": "I'm the person who <strong>bridges the gap between design and engineering</strong> to give your product that extra polish to <strong>stand out from the rest.</strong>",
+    "scrollDown": "See my work",
+    "status": "● AVAILABLE FOR REMOTE WORK.",
+    "getInTouch": "Send an email",
+    "viewWork": "or view my experience →"
   },
   "Work": {
     "title": "My Work",
@@ -23,26 +23,26 @@
   },
   "About": {
     "title": "About Me",
-    "subtitle": "The most creative coworker 💻",
-    "description1": "UX Engineer with over 4 years of experience building modern, people-centered digital experiences.",
-    "description2": "I'm passionate about turning ideas into usable products, where design and code work in harmony.",
-    "description3": "🌱 Always learning and inspired by video games and their interfaces.",
+    "subtitle": "UX Engineer & Frontend Developer",
+    "description1": "With 5+ years of experience, I build interfaces that solve real problems. I work at the intersection of design and development.",
+    "description2": "Specialized in user experience, accessibility, and clean code. I create products that people enjoy using.",
+    "description3": "Always learning. Inspired by games, typography, and good design.",
     "skills": "Skills",
     "tools": "Tools",
     "languages": "Languages",
     "education": "Education",
     "experience": "Experience",
-    "downloadCV": "Download my CV",
+    "downloadCV": "Download CV",
     "yearsExperience": "Years of Experience",
     "projectsCompleted": "Projects Completed",
     "clientSatisfaction": "Client Satisfaction"
   },
   "Contact": {
-    "title": "Let's Work Together!",
-    "description": "Do you have a project idea? Need help with UI design or layout? Or simply want to chat? I'll be happy to respond.",
+    "title": "Elsewhere",
+    "description": "Connect with me on social media or send me an email. Always interested in talking about design, development, and new projects.",
     "email": "Email",
-    "social": "Social media",
-    "elsewhere": "Elsewhere"
+    "social": "Social",
+    "elsewhere": "Social"
   },
   "Footer": {
     "rights": "All rights reserved",
@@ -73,31 +73,31 @@
       "title": "Software Engineer",
       "company": "Cultivate",
       "period": "Apr 2023 - Present",
-      "description": "1. Developed and optimized interfaces with React and TypeScript, ensuring visual precision and scalability.\n2. Participated in creating a new client platform, integrating Laravel into the frontend workflow.\n3. Implemented responsive emails and UI components aligned with design guidelines.\n4. Collaborated closely with the design team to achieve pixel-perfect interfaces."
+      "description": "1. Built and optimized interfaces with React and TypeScript within a micro-frontend architecture, ensuring visual precision and long-term scalability.\n2. Led the frontend development of a new client-facing platform, integrating Laravel as backend and delivering a clean end-to-end implementation.\n3. Designed and implemented responsive emails and a UI component system aligned with the product's design guidelines.\n4. Served as the bridge between design and engineering, translating complex specifications into pixel-perfect interfaces with meticulous attention to detail."
     },
     "2": {
       "title": "Web Designer",
       "company": "Uniqo Agency",
       "period": "Nov 2022 - Sept 2023",
-      "description": "1. Designed and customized interfaces for WordPress sites, adapting themes and styles according to client requirements.\n2. Integrated and configured plugins to expand functionality without compromising performance.\n3. Provided 1:1 mentoring to students on HTML, CSS, and JavaScript fundamentals.\n4. Assisted in component layout and usability improvement in HubSpot."
+      "description": "1. Designed and developed custom interfaces for WordPress sites, tailoring themes, styles, and flows to meet each client's goals.\n2. Strategically selected and integrated plugins to extend functionality without affecting performance or maintainability.\n3. Delivered 1:1 mentoring sessions to early-stage students, covering HTML, CSS, and JavaScript fundamentals with a hands-on approach.\n4. Collaborated on component layout and usability improvements for projects built on HubSpot."
     },
     "3": {
       "title": "Web UI Developer",
       "company": "Denomades",
-      "period": "May 2021 - Aug 2022 (1 year and 4 months)",
-      "description": "1. Developed and maintained features across multiple internal platforms.\n2. Participated in migration processes and codebase improvements.\n3. Enhanced UX of the main site, achieving a score of 100 in accessibility (Lighthouse).\n4. Designed UX/UI mockups on paper and Figma to guide development.\n5. Documented new UI components in the style guide (buttons, menus, inputs, etc.).\n6. Provided technical support to other company teams."
+      "period": "May 2021 - Aug 2022",
+      "description": "1. Developed and maintained features across multiple internal platforms, ensuring visual consistency and stability.\n2. Led migration and refactoring efforts across the codebase, improving overall quality and readability.\n3. Redesigned the main site's experience, achieving a perfect accessibility score of 100 on Lighthouse.\n4. Created UX/UI mockups in Figma that served as the direct reference for the development team.\n5. Built and documented a reusable UI component system (buttons, menus, inputs, etc.) within the project's style guide.\n6. Provided cross-team technical support, acting as the frontend reference across the company."
     },
     "4": {
       "title": "Freelance Web Designer",
       "company": "Freelancer",
-      "period": "Dec 2021 - Mar 2022 (4 months)",
-      "description": "1. Developed websites and components with React and HTML/CSS for international clients.\n2. Optimized performance and cross-browser compatibility.\n3. Collaborated directly with clients to design personalized and usable experiences."
+      "period": "Dec 2021 - Mar 2022",
+      "description": "1. Designed and developed websites and components with React and HTML/CSS for international clients, from concept to deployment.\n2. Optimized performance and cross-browser compatibility to ensure consistent experiences across all devices.\n3. Managed direct client relationships, translating their needs into functional, user-centered visual solutions."
     },
     "5": {
       "title": "Web Layout Developer",
       "company": "EDteam",
-      "period": "Nov 2020 - Jan 2021 (3 months)",
-      "description": "1. Created visual components based on existing designs.\n2. Detected and corrected layout errors ensuring visual consistency.\n3. Supported translation of designs into functional interfaces."
+      "period": "Nov 2020 - Jan 2021",
+      "description": "1. Built visual components from existing designs, maintaining fidelity to detail and consistency with the product's identity.\n2. Identified and corrected layout errors, ensuring visual consistency across environments.\n3. Collaborated on transforming static designs into functional interfaces, contributing to the team's quality standards."
     }
   },
   "Education": {

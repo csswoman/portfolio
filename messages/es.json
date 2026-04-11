@@ -6,14 +6,14 @@
     "goToHome": "Ir al inicio de la página"
   },
   "Hero": {
-    "greeting": "Hey, soy",
-    "role": "UX Engineer",
-    "description": "Como <role></role> creo interfaces que se sienten naturales, inclusivas y llenas de vida.",
-    "description2": "Combino la intuición del diseño con la precisión del código para crear experiencias digitales que simplemente se sienten bien.",
-    "scrollDown": "Ir a la sección de trabajos",
-    "status": "Abierta a nuevos proyectos",
-    "getInTouch": "Contáctame",
-    "viewWork": "Ver experiencia"
+    "greeting": "Hola, soy",
+    "role": "UI ENGINEER ESPECIALIZADA EN UX.",
+    "description": "Construyo interfaces que se sienten como una extensión natural de tu producto — rápidas, precisas y pensadas con atención a cada detalle.",
+    "description2": "Soy la persona que <strong>conecta el diseño con el código</strong> para darle a tu producto ese acabado extra que lo hace <strong>destacar entre los demás.</strong>",
+    "scrollDown": "Ver mi trabajo",
+    "status": "● DISPONIBLE PARA TRABAJO REMOTO.",
+    "getInTouch": "Enviar email",
+    "viewWork": "o ver mi experiencia →"
   },
   "Work": {
     "title": "Mi Trabajo",
@@ -22,27 +22,27 @@
     "technologies": "Tecnologías"
   },
   "About": {
-    "title": "Acerca de mi",
-    "subtitle": "La compañera de trabajo más creativa 💻",
-    "description1": "UX Engineer con más de 4 años de experiencia construyendo experiencias digitales modernas y centradas en las personas.",
-    "description2": "Me apasiona convertir ideas en productos usables, donde diseño y código trabajan en armonía.",
-    "description3": "🌱 Siempre aprendiendo e inspirada por los videojuegos y sus interfaces.",
+    "title": "Sobre mí",
+    "subtitle": "UX Engineer & Frontend Developer",
+    "description1": "Con más de 5 años de experiencia, construyo interfaces que resuelven problemas reales. Trabajo en la intersección entre diseño y desarrollo.",
+    "description2": "Especializada en experiencia de usuario, accesibilidad y código limpio. Creo productos que las personas disfrutan usar.",
+    "description3": "Siempre aprendiendo. Inspirada por los videojuegos, la tipografía y el buen diseño.",
     "skills": "Habilidades",
     "tools": "Herramientas",
     "languages": "Idiomas",
     "education": "Educación",
     "experience": "Experiencia",
-    "downloadCV": "Descarga mi CV",
+    "downloadCV": "Descargar CV",
     "yearsExperience": "Años de Experiencia",
     "projectsCompleted": "Proyectos Completados",
     "clientSatisfaction": "Satisfacción del Cliente"
   },
   "Contact": {
-    "title": "¡Trabajemos juntos!",
-    "description": "¿Tienes alguna idea de proyecto? ¿Necesitas ayuda con diseño UI o maquetación? o ¿Simplemente quieres conversar? Estaré feliz de contestar.",
-    "email": "Correo electrónico",
-    "social": "Redes sociales",
-    "elsewhere": "Otros lugares"
+    "title": "En otros lugares",
+    "description": "Conecta conmigo en redes sociales o envíame un email. Siempre interesada en conversar sobre diseño, desarrollo y nuevos proyectos.",
+    "email": "Email",
+    "social": "Social",
+    "elsewhere": "Redes"
   },
   "Footer": {
     "rights": "Todos los derechos reservados",
@@ -73,31 +73,31 @@
       "title": "Software Engineer",
       "company": "Cultivate",
       "period": "Abr 2023 - Actualidad",
-      "description": "1. Desarrollé y optimicé interfaces con React y TypeScript, garantizando precisión visual y escalabilidad.\n2. Participé en la creación de una nueva plataforma para clientes, integrando Laravel al flujo de trabajo frontend.\n3. Implementé emails responsivos y componentes UI alineados con las guías de diseño.\n4. Colaboré estrechamente con el equipo de diseño para lograr interfaces pixel-perfect."
+      "description": "1. Construí y optimicé interfaces con React y TypeScript dentro de una arquitectura de micro-frontends, asegurando precisión visual y escalabilidad a largo plazo.\n2. Lideré el desarrollo frontend de una nueva plataforma para clientes, integrando Laravel como backend y garantizando una entrega limpia de extremo a extremo.\n3. Diseñé e implementé emails responsivos y un sistema de componentes UI alineado con la guía de diseño del producto.\n4. Actué como punto de contacto entre diseño e ingeniería, traduciendo especificaciones complejas en interfaces pixel-perfect con atención al detalle."
     },
     "2": {
       "title": "Web Designer",
       "company": "Uniqo Agency",
       "period": "Nov 2022 - Sept 2023",
-      "description": "1. Diseñé y personalicé interfaces para sitios WordPress, adaptando temas y estilos según los requerimientos del cliente.\n2. Integré y configuré plugins para ampliar funcionalidades sin comprometer el rendimiento.\n3. Brindé mentorías 1:1 a estudiantes sobre fundamentos de HTML, CSS y JavaScript.\n4. Asistí en la maquetación de componentes y la mejora de usabilidad en HubSpot."
+      "description": "1. Diseñé y desarrollé interfaces a medida para sitios WordPress, adaptando temas, estilos y flujos según los objetivos de cada cliente.\n2. Seleccioné e integré plugins estratégicamente para ampliar funcionalidades sin afectar el rendimiento ni la mantenibilidad.\n3. Impartí mentorías 1:1 a estudiantes en etapa inicial, cubriendo fundamentos de HTML, CSS y JavaScript con enfoque práctico.\n4. Colaboré en la maquetación de componentes y optimización de usabilidad en proyectos desarrollados con HubSpot."
     },
     "3": {
       "title": "Web UI Developer",
       "company": "Denomades",
-      "period": "May 2021 - Ago 2022 (1 año y 4 meses)",
-      "description": "1. Desarrollé y mantuve funcionalidades en múltiples plataformas internas.\n2. Participé en procesos de migración y mejora del código base.\n3. Mejoré la UX del sitio principal, alcanzando una puntuación de 100 en accesibilidad (Lighthouse).\n4. Diseñé mockups UX/UI en papel y Figma para guiar el desarrollo.\n5. Documenté nuevos componentes UI en la guía de estilos (botones, menús, inputs, etc.).\n6. Brindé soporte técnico a otros equipos de la empresa."
+      "period": "May 2021 - Ago 2022",
+      "description": "1. Desarrollé y mantuve funcionalidades en múltiples plataformas internas, asegurando coherencia visual y estabilidad.\n2. Lideré procesos de migración y refactorización del código base, mejorando la calidad y legibilidad del proyecto.\n3. Rediseñé la experiencia del sitio principal logrando una puntuación perfecta de 100 en accesibilidad según Lighthouse.\n4. Creé mockups UX/UI en Figma que sirvieron como referencia directa para el equipo de desarrollo.\n5. Construí y documenté un sistema de componentes UI reutilizables (botones, menús, inputs, etc.) en la guía de estilos del proyecto.\n6. Brindé soporte técnico transversal a distintos equipos, actuando como referente frontend dentro de la empresa."
     },
     "4": {
       "title": "Freelance Web Designer",
       "company": "Freelancer",
-      "period": "Dic 2021 - Mar 2022 (4 meses)",
-      "description": "1. Desarrollé sitios web y componentes con React y HTML/CSS para clientes internacionales.\n2. Optimicé rendimiento y compatibilidad entre navegadores.\n3. Colaboré directamente con clientes para diseñar experiencias personalizadas y usables."
+      "period": "Dic 2021 - Mar 2022",
+      "description": "1. Diseñé y desarrollé sitios web y componentes con React y HTML/CSS para clientes internacionales, desde el concepto hasta el despliegue.\n2. Optimicé el rendimiento y la compatibilidad entre navegadores para garantizar experiencias consistentes en todos los dispositivos.\n3. Gestioné la relación directa con clientes, traduciendo sus necesidades en soluciones visuales funcionales y centradas en el usuario."
     },
     "5": {
       "title": "Maquetadora Web",
       "company": "EDteam",
-      "period": "Nov 2020 - Ene 2021 (3 meses)",
-      "description": "1. Maqueté componentes visuales basados en diseños existentes.\n2. Detecté y corregí errores de maquetación asegurando consistencia visual.\n3. Apoyé la traducción de diseños en interfaces funcionales."
+      "period": "Nov 2020 - Ene 2021",
+      "description": "1. Maquété componentes visuales a partir de diseños existentes, manteniendo fidelidad al detalle y coherencia con la identidad del producto.\n2. Identifiqué y corregí errores de maquetación, garantizando consistencia visual entre entornos.\n3. Colaboré en la transformación de diseños estáticos en interfaces funcionales, contribuyendo a los estándares de calidad del equipo."
     }
   },
   "Education": {

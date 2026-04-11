@@ -1,5 +1,6 @@
 import { GetStaticPropsContext } from 'next';
-import { NextSeo } from 'next-seo';
+import Head from 'next/head';
+import { generateNextSeo } from 'next-seo/pages';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
@@ -8,10 +9,12 @@ function Error({ statusCode }: { statusCode: number }) {
 
   return (
     <>
-      <NextSeo
-        title={`${statusCode} - Error`}
-        description="Ha ocurrido un error"
-      />
+      <Head>
+        {generateNextSeo({
+          title: `${statusCode} - Error`,
+          description: "Ha ocurrido un error",
+        })}
+      </Head>
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center">
           <h1 className="text-6xl font-bold mb-4">{statusCode || 'Error'}</h1>

@@ -1,16 +1,17 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { DefaultSeo } from "next-seo";
+import Head from "next/head";
+import { generateDefaultSeo } from "next-seo/pages";
 import SEO from "@/lib/seo.config";
 import { NextIntlClientProvider } from 'next-intl';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <NextIntlClientProvider 
+    <NextIntlClientProvider
       messages={pageProps.messages}
-      locale={pageProps.locale}
+      locale={pageProps.locale || 'es'}
     >
-      <DefaultSeo {...SEO} />
+      <Head>{generateDefaultSeo(SEO)}</Head>
       <Component {...pageProps} />
     </NextIntlClientProvider>
   );

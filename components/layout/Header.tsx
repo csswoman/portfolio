@@ -1,78 +1,62 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export function Header() {
   const t = useTranslations('Header');
+  const locale = useLocale();
   const router = useRouter();
-  const { locale, pathname, asPath, query } = router;
-  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window === 'undefined') return 'dark';
+    return (localStorage.getItem('theme') as 'dark' | 'light') || 'dark';
+  });
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
-  const changeLanguage = (newLocale: string) => {
-    router.push({ pathname, query }, asPath, { locale: newLocale });
-  };
-
-  const handleThemeToggle = () => {
-    if (!mounted) return;
-    const html = document.documentElement;
-    const currentTheme = html.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', newTheme);
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
   };
 
-  if (!mounted) return null;
+  const changeLanguage = (newLocale: string) => {
+    router.push(router.pathname, router.asPath, { locale: newLocale });
+  };
 
   return (
-    <header className="fixed w-full top-0 z-10">
-      <div className="container py-4 flex justify-between items-center">
-        <a
-          href="/"
-          className="hidden sm:flex items-center font-display font-bold text-text-primary"
-          aria-label={t('goToHome')}
-        >
-          @csswoman
-        </a>
-        <nav className="flex gap-4 items-center ml-auto">
-          <a className="text-text-secondary hover:text-text-primary transition-colors text-sm" href="#work">
-            {t('work')}
-          </a>
-          <a className="text-text-secondary hover:text-text-primary transition-colors text-sm" href="#about">
-            {t('about')}
-          </a>
-          <a className="text-text-secondary hover:text-text-primary transition-colors text-sm" href="#contact">
-            {t('contact')}
-          </a>
-
-          {/* Language Switcher */}
-          <div className="flex gap-1 p-1 bg-accent-dim rounded-md backdrop-blur-sm">
+    <header>
+      <div className="container">
+        <Link href="/" className="logo">
+          KARLA AGRAZ
+        </Link>
+        <nav>
+          <a href="#work">{t('work').toUpperCase()}</a>
+          <Link href="/experience">{t('about').toUpperCase()}</Link>
+          <a href="#contact">{t('contact').toUpperCase()}</a>
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
+          <div className="lang-switcher">
             <button
               onClick={() => changeLanguage('es')}
-              className={`px-2 py-1 rounded text-xs font-bold transition-colors ${
-                locale === 'es'
-                  ? 'bg-accent text-bg-primary'
-                  : 'text-text-muted hover:text-text-secondary'
-              }`}
+              className={locale === 'es' ? 'active' : ''}
               aria-label="Cambiar a español"
             >
-              ES
+              [ES]
             </button>
             <button
               onClick={() => changeLanguage('en')}
-              className={`px-2 py-1 rounded text-xs font-bold transition-colors ${
-                locale === 'en'
-                  ? 'bg-accent text-bg-primary'
-                  : 'text-text-muted hover:text-text-secondary'
-              }`}
+              className={locale === 'en' ? 'active' : ''}
               aria-label="Switch to English"
             >
-              EN
+              [EN]
             </button>
           </div>
         </nav>
@@ -80,4 +64,3 @@ export function Header() {
     </header>
   );
 }
-

@@ -1,46 +1,67 @@
 import { useTranslations } from 'next-intl';
 import { personalInfo } from '@/lib/constants';
+import Link from 'next/link';
+import { useState } from 'react';
+import { ExperienceTimeline } from './ExperienceTimeline';
 
 export function HeroSection() {
   const t = useTranslations('Hero');
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(personalInfo.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
   return (
-    <>
-      <div className="stars-bg" aria-hidden="true">
-        <div className="p"></div>
-        <div className="p"></div>
-        <div className="p"></div>
-        <div className="p"></div>
-        <div className="p"></div>
-        <div className="p"></div>
-        <div className="p"></div>
-        <div className="p"></div>
-        <div className="p"></div>
-        <div className="p"></div>
-      </div>
+    <section className="hero">
+      <div className="container">
+        <h1 className="hero-name">
+          {personalInfo.name.split(' ')[0]} {personalInfo.name.split(' ')[1]}
+          <span className="hero-handle">&nbsp;/{personalInfo.username}</span>
+        </h1> 
+        <p className="hero-title">{t('role')}</p>
 
-      <section className="hero container">
-        <h1 className="hero-name">{personalInfo.name}</h1>
-        <p className="hero-handle">@{personalInfo.username}</p>
-        <p className="hero-title">{personalInfo.title}</p>
         <p className="hero-desc">
-          {t.rich('description', {
-            role: (chunks) => <em>{chunks}</em>,
+          {t('description')}
+        </p>
+        <p className="hero-desc">
+          {t.rich('description2', {
+            strong: (chunks) => <strong>{chunks}</strong>,
           })}
         </p>
+
+        <div className="status-pill">
+          <span className="dot"></span>
+          {t('status')}
+        </div>
+
         <div className="hero-actions">
-          <span className="status-pill">
-            <span className="dot"></span>
-            {t('status')}
-          </span>
           <a href={`mailto:${personalInfo.email}`} className="btn btn-primary">
             {t('getInTouch')}
           </a>
-          <a href="#work" className="btn">
-            {t('viewWork')}
-          </a>
+          <button
+            onClick={handleCopyEmail}
+            className="btn btn-primary"
+            aria-label="Copy email address"
+          >
+            {copied ? '✓ COPIED' : 'COPY EMAIL'}
+          </button>
         </div>
-      </section>
-    </>
+
+        <div style={{ marginTop: '20px' }}>
+          <Link href="/experience" className="hero-link">
+            {t('viewWork')}
+          </Link>
+        </div>
+
+        <ExperienceTimeline />
+      </div>
+    </section>
   );
 }

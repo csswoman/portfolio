@@ -12,7 +12,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="p-4 rounded-xl bg-transparent hover:bg-white hover:bg-opacity-10 transition-all"
+      className="p-4 rounded-xl bg-transparent hover:bg-white/10 transition-all"
     >
       <article>
         <Image
