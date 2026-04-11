@@ -3,8 +3,17 @@ import Head from 'next/head';
 import { generateNextSeo } from 'next-seo/pages';
 import { Header, Footer } from '@/components/layout';
 import { getWorkExperience, cvPaths } from '@/lib/constants';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
+
+const COMPANY_LOGOS: Record<number, string> = {
+  1: '/images/cultivate_logo.jpg',
+  2: '/images/upwork_logo.jpg',
+  3: '/images/denomades_logo.jpg',
+  4: '/images/upwork_logo.jpg',
+  5: '/images/edteamlat_logo.jpg',
+};
 
 
 export default function Experience() {
@@ -33,44 +42,50 @@ export default function Experience() {
         <section className="section">
           <h1 className="section-label">EXPERIENCE</h1>
 
-          <div className="exp-timeline">
-            <div style={{ marginTop: '40px' }}>
-              <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px', color: 'var(--text-primary)' }}>
-                {t('About.experience')}
-              </h2>
-              {workExperience.map((exp) => (
-                <div key={exp.id} style={{ marginBottom: '32px', paddingBottom: '24px', borderBottom: '1px solid var(--border-light)' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
-                    <div>
-                      <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)' }}>
-                        {exp.title}
-                      </div>
-                      <div style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
-                        {exp.company}
-                      </div>
-                    </div>
-                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', whiteSpace: 'nowrap', marginLeft: '16px' }}>
-                      {exp.period}
-                    </div>
-                  </div>
-                  <p style={{ fontSize: '13px', lineHeight: '1.8', color: 'var(--text-secondary)', marginTop: '8px', whiteSpace: 'pre-wrap' }}>
-                    {exp.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="exp-list">
+            {workExperience.map((exp) => {
+              const bullets = exp.description
+                .split('\n')
+                .map((line: string) => line.replace(/^\d+\.\s*/, '').trim())
+                .filter(Boolean);
 
-            <div style={{ marginTop: '32px' }}>
-              <a
-                href={cvPath}
-                download
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-primary"
-              >
-                {currentLocale === 'es' ? 'DESCARGAR CV' : 'DOWNLOAD CV'}
-              </a>
-            </div>
+              return (
+                <div key={exp.id} className="exp-item">
+                  <div className="exp-header">
+                    <div className="exp-role-block">
+                      {COMPANY_LOGOS[exp.id] && (
+                        <a href={COMPANY_LOGOS[exp.id]} target="_blank" rel="noopener noreferrer">
+                          <Image src={COMPANY_LOGOS[exp.id]} alt={exp.company} width={24} height={24} />
+                        </a>
+                      )}
+                      <span className="exp-role">{exp.title}</span>
+                      <span className="exp-company">— {exp.company}</span>
+                    </div>
+                    <span className="exp-period">{exp.period}</span>
+                  </div>
+                  <ul className="exp-bullets">
+                    {bullets.map((bullet: string, i: number) => (
+                      <li key={i} className="exp-bullet">
+                        <span className="exp-bullet-arrow">→</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={{ marginTop: '48px' }}>
+            <a
+              href={cvPath}
+              download
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-cta-primary"
+            >
+              {currentLocale === 'es' ? 'DESCARGAR CV' : 'DOWNLOAD CV'}
+            </a>
           </div>
         </section>
       </main>

@@ -18,7 +18,7 @@ export const Default: Story = {
     experience: {
       id: 1,
       title: "Diseñadora web",
-      company: "Uniqo agency",
+      company: "Upwork",
       period: "Nov 2022 - Feb 2023 (4 meses)",
       description:
         "Entre las labores que realicé fueron: editar plantillas de WordPress, integración de plugins maquetación de componentes en HubSpot.",

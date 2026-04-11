@@ -112,11 +112,20 @@ body::before {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(var(--border-light) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 50px 50px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
   pointer-events: none;
   z-index: 0;
+}
+
+[data-theme="light"] body::before,
+[data-theme="light"]::before {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
 
 main, header, footer {
@@ -146,11 +155,6 @@ a:hover {
 }
 
 /* HEADER */
-header {
-  padding: 20px 0;
-  position: relative;
-}
-
 header .container {
   display: flex;
   justify-content: space-between;
@@ -165,21 +169,11 @@ header .container {
   text-transform: uppercase;
 }
 
-header nav {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-
 header nav a {
   font-size: 12px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   transition: color var(--transition);
-}
-
-header nav a:hover {
-  color: var(--orange);
 }
 
 .lang-switcher {
@@ -229,11 +223,6 @@ header nav a:hover {
 }
 
 /* HERO */
-.hero {
-  position: relative;
-  margin-top: 48px;
-}
-
 .hero-name {
   font-size: 40px;
   font-weight: 700;
@@ -253,20 +242,28 @@ header nav a:hover {
 }
 
 .hero-title {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.hero-tagline {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  letter-spacing: 0.2px;
 }
 
 .hero-desc {
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 28px;
-  max-width: 600px;
+  max-width: 520px;
 }
 
 .no-scrollbar {
@@ -331,15 +328,17 @@ header nav a:hover {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: all var(--transition);
+  transition: all 0.2s ease;
   border-radius: var(--radius-md);
 }
 
 .btn:hover {
   border-color: var(--accent);
   color: var(--accent);
+  transform: scale(1.02);
 }
 
+/* Legacy aliases */
 .btn-primary {
   border-color: var(--accent);
   color: var(--accent);
@@ -347,16 +346,50 @@ header nav a:hover {
 
 .btn-primary:hover {
   background: var(--accent-dim);
+  box-shadow: 0 0 12px rgba(183, 142, 219, 0.25);
+  transform: scale(1.02);
+}
+
+/* CTA hierarchy */
+.btn-cta-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg-deep);
+  font-weight: 600;
+}
+
+.btn-cta-primary:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+  color: var(--bg-deep);
+  box-shadow: 0 0 16px rgba(183, 142, 219, 0.35);
+  transform: scale(1.02);
+}
+
+.btn-cta-secondary {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn-cta-secondary:hover {
+  background: var(--accent-dim);
   box-shadow: 0 0 10px rgba(183, 142, 219, 0.2);
+  transform: scale(1.02);
 }
 
-.btn-secondary {
-  border-color: var(--orange);
-  color: var(--orange);
+.btn-cta-ghost {
+  border-color: var(--border-medium);
+  color: var(--text-muted);
+  background: transparent;
+  font-size: 11px;
+  letter-spacing: 0.3px;
 }
 
-.btn-secondary:hover {
-  background: rgba(255, 165, 0, 0.1);
+.btn-cta-ghost:hover {
+  border-color: var(--border-medium);
+  color: var(--text-secondary);
+  transform: scale(1.02);
 }
 
 .hero-link {
@@ -447,6 +480,7 @@ header nav a:hover {
 
 .timeline-content {
   padding-left: 0;
+  position: relative;
 }
 
 .timeline-company {
@@ -474,6 +508,51 @@ header nav a:hover {
   color: var(--orange);
 }
 
+.timeline-item--active .timeline-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(183, 142, 219, 0.4);
+}
+
+.timeline-item--active .timeline-company {
+  color: var(--accent);
+}
+
+.timeline-tooltip {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  z-index: 10;
+  animation: fadeInUp 0.15s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timeline-tooltip-stack {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
+.timeline-tooltip-achievement {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
 /* SECTION */
 .section {
   padding: 60px 0;
@@ -481,12 +560,115 @@ header nav a:hover {
 }
 
 .section-label {
-  font-size: 11px;
-  letter-spacing: 1px;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--text-dim);
   margin-bottom: 32px;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+/* Typography hierarchy helpers */
+.meta-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.content-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* HOLOGRAPHIC BORDER SYSTEM
+ *
+ * Technique: ::before sits 1px outside the card and carries the gradient.
+ * ::after sits exactly at inset:0 with the card's own background color,
+ * covering the ::before completely — except for the 1px ring at the edges.
+ * Result: only the border shows the gradient, interior stays untouched.
+ *
+ * holo-rotate  → cycles the gradient position on ::before (the border itself)
+ * holo-glow    → pulses the outer box-shadow on the card element (the halo)
+ */
+
+@keyframes holo-rotate {
+  0%   { background-position: 0%   50%; }
+  25%  { background-position: 100% 0%;  }
+  50%  { background-position: 100% 100%; }
+  75%  { background-position: 0%   100%; }
+  100% { background-position: 0%   50%; }
+}
+
+@keyframes holo-glow {
+  0%,  100% { box-shadow: 0 0 10px rgba(207, 166, 255, 0.22), 0 4px 20px rgba(0,0,0,0.35); }
+  33%        { box-shadow: 0 0 14px rgba(127, 231, 231, 0.22), 0 4px 20px rgba(0,0,0,0.35); }
+  66%        { box-shadow: 0 0 12px rgba(255, 179, 209, 0.22), 0 4px 20px rgba(0,0,0,0.35); }
+}
+
+:root {
+  --holo-lilac:  #CFA6FF;
+  --holo-teal:   #7FE7E7;
+  --holo-blue:   #8FB8FF;
+  --holo-mint:   #A8FFCF;
+  --holo-yellow: #FFF3A3;
+  --holo-pink:   #FFB3D1;
+
+  /* 6-stop gradient, wraps back to start for seamless looping */
+  --holo-gradient: linear-gradient(
+    135deg,
+    var(--holo-lilac)  0%,
+    var(--holo-teal)   18%,
+    var(--holo-blue)   36%,
+    var(--holo-mint)   54%,
+    var(--holo-yellow) 72%,
+    var(--holo-pink)   90%,
+    var(--holo-lilac)  100%
+  );
+}
+
+/* ── Reusable .holo-card ─────────────────────────────────────────────────── */
+.holo-card {
+  position: relative;
+  isolation: isolate;
+}
+
+/* gradient layer — 1px outside → becomes the border ring */
+.holo-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--holo-gradient);
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: -1;
+  animation: holo-rotate 5s linear infinite paused;
+}
+
+/* solid mask — covers ::before inside the card, leaving only the 1px ring */
+.holo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--bg-card);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.holo-card:hover {
+  animation: holo-glow 4s ease infinite;
+}
+
+.holo-card:hover::before {
+  opacity: 0.9;
+  animation-play-state: running;
 }
 
 /* WORK / PROJECTS */
@@ -499,17 +681,49 @@ header nav a:hover {
   display: block;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
-  overflow: hidden;
-  transition: all var(--transition);
+  /* overflow must be visible so ::before (1px outside) is not clipped */
+  overflow: visible;
+  transition: transform 0.3s ease, border-color 0.3s ease;
   background: var(--bg-card);
   text-decoration: none;
+  position: relative;
+  isolation: isolate;
+}
+
+/* gradient ring layer */
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-md);
+  background: var(--holo-gradient);
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: -1;
+  animation: holo-rotate 5s linear infinite paused;
+}
+
+/* solid mask — hides the ::before inside the card body */
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .project-card:hover {
-  border-color: var(--accent);
-  background: var(--bg-elevated);
+  border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(183, 142, 219, 0.15);
+  animation: holo-glow 4s ease infinite;
+}
+
+.project-card:hover::before {
+  opacity: 0.9;
+  animation-play-state: running;
 }
 
 .project-thumb {
@@ -521,6 +735,7 @@ header nav a:hover {
   overflow: hidden;
   background: linear-gradient(135deg, #111111, #1a1a1a);
   border-bottom: 1px solid var(--border-light);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
 .project-thumb-text {
@@ -533,6 +748,8 @@ header nav a:hover {
 
 .project-body {
   padding: 16px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  background: var(--bg-card);
 }
 
 .project-name {
@@ -548,7 +765,86 @@ header nav a:hover {
   line-height: 1.6;
 }
 
-/* EXPERIENCE PAGE - TIMELINE */
+/* EXPERIENCE PAGE - LIST */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.exp-item {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.exp-item:first-child {
+  padding-top: 0;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.exp-role-block {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+.exp-company {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.2px;
+}
+
+.exp-period {
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.exp-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.exp-bullet-arrow {
+  color: var(--accent);
+  flex-shrink: 0;
+  font-size: 12px;
+  margin-top: 1px;
+  opacity: 0.7;
+}
+
+/* EXPERIENCE PAGE - TIMELINE (legacy) */
 .exp-timeline {
   position: relative;
 }
@@ -749,9 +1045,6 @@ header nav a:hover {
 }
 
 /* UTILITY */
-.reveal {
-  /* animations removed */
-}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -765,10 +1058,6 @@ header nav a:hover {
 
   .hero-desc {
     font-size: 13px;
-  }
-
-  header nav {
-    gap: 16px;
   }
 
   .experience-timeline {
@@ -814,16 +1103,6 @@ header nav a:hover {
   header .container {
     flex-direction: column;
     gap: 12px;
-  }
-
-  header nav {
-    width: 100%;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .hero {
-    padding: 40px 0;
   }
 
   .hero-name {

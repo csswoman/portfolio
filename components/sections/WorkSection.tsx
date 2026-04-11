@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { getProjects } from '@/lib/constants';
+import { GlitchCard } from "@/components/ui/GlitchCard";
 import Link from 'next/link';
 
 export function WorkSection() {
@@ -28,6 +29,16 @@ export function WorkSection() {
               </div>
             </Link>
           ))}
+          <GlitchCard
+              title="AKQ4#8W_G"
+              description="B1E! 3%2F-* 246[Q-40G 7A# 900= X-RG =17KJF[A^"
+              badge="SOON"
+            />
+          <GlitchCard
+            title="AKQ4#8W_G"
+            description="B1E! 3%2F-* 246[Q-40G 7A# 900= X-RG =17KJF[A^"
+            badge="SOON"
+          />
         </div>
       </div>
     </section>

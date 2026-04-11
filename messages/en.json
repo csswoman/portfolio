@@ -7,13 +7,14 @@
   },
   "Hero": {
     "greeting": "Hi, I'm",
-    "role": "UI ENGINEER FOCUSED ON UX EXPERIENCE.",
-    "description": "Building interfaces that feel like a natural extension of your product — fast, precise, and crafted with attention to every detail.",
-    "description2": "I'm the person who <strong>bridges the gap between design and engineering</strong> to give your product that extra polish to <strong>stand out from the rest.</strong>",
+    "role": "UI ENGINEER",
+    "tagline": "Focused on crafting precise, scalable interfaces.",
+    "description": "Bridging design and engineering to ship high-quality product experiences.",
     "scrollDown": "See my work",
-    "status": "● AVAILABLE FOR REMOTE WORK.",
-    "getInTouch": "Send an email",
-    "viewWork": "or view my experience →"
+    "status": "AVAILABLE FOR REMOTE WORK.",
+    "letsWork": "Let's work together",
+    "viewExperience": "View experience",
+    "copyEmail": "Copy email"
   },
   "Work": {
     "title": "My Work",
@@ -73,31 +74,31 @@
       "title": "Software Engineer",
       "company": "Cultivate",
       "period": "Apr 2023 - Present",
-      "description": "1. Built and optimized interfaces with React and TypeScript within a micro-frontend architecture, ensuring visual precision and long-term scalability.\n2. Led the frontend development of a new client-facing platform, integrating Laravel as backend and delivering a clean end-to-end implementation.\n3. Designed and implemented responsive emails and a UI component system aligned with the product's design guidelines.\n4. Served as the bridge between design and engineering, translating complex specifications into pixel-perfect interfaces with meticulous attention to detail."
+      "description": "1. Built scalable micro-frontend architecture with React & TypeScript — used across multiple client teams.\n2. Led full frontend of a new client-facing platform (Laravel integration), from 0 to production.\n3. Created UI component system + responsive email templates aligned to product design guidelines.\n4. Bridged design and engineering — translating complex specs into pixel-perfect delivery."
     },
     "2": {
       "title": "Web Designer",
-      "company": "Uniqo Agency",
+      "company": "Upwork",
       "period": "Nov 2022 - Sept 2023",
-      "description": "1. Designed and developed custom interfaces for WordPress sites, tailoring themes, styles, and flows to meet each client's goals.\n2. Strategically selected and integrated plugins to extend functionality without affecting performance or maintainability.\n3. Delivered 1:1 mentoring sessions to early-stage students, covering HTML, CSS, and JavaScript fundamentals with a hands-on approach.\n4. Collaborated on component layout and usability improvements for projects built on HubSpot."
+      "description": "1. Designed and built custom WordPress interfaces tailored to individual client goals and brand.\n2. Integrated plugins strategically, extending functionality without impacting performance.\n3. Mentored early-stage students 1:1 in HTML, CSS, and JavaScript fundamentals.\n4. Improved component layout and usability for HubSpot-based projects."
     },
     "3": {
       "title": "Web UI Developer",
       "company": "Denomades",
       "period": "May 2021 - Aug 2022",
-      "description": "1. Developed and maintained features across multiple internal platforms, ensuring visual consistency and stability.\n2. Led migration and refactoring efforts across the codebase, improving overall quality and readability.\n3. Redesigned the main site's experience, achieving a perfect accessibility score of 100 on Lighthouse.\n4. Created UX/UI mockups in Figma that served as the direct reference for the development team.\n5. Built and documented a reusable UI component system (buttons, menus, inputs, etc.) within the project's style guide.\n6. Provided cross-team technical support, acting as the frontend reference across the company."
+      "description": "1. Developed and maintained features across multiple internal platforms used daily by the full team.\n2. Led codebase migration and refactoring — measurably improved readability and maintainability.\n3. Redesigned the main site's experience, achieving a perfect 100/100 Lighthouse accessibility score.\n4. Created Figma UX/UI mockups used as direct spec by the dev team.\n5. Built and documented a reusable UI component system (buttons, menus, inputs, etc.).\n6. Served as frontend reference across teams — primary point of contact for UI decisions."
     },
     "4": {
       "title": "Freelance Web Designer",
-      "company": "Freelancer",
+      "company": "Upwork",
       "period": "Dec 2021 - Mar 2022",
-      "description": "1. Designed and developed websites and components with React and HTML/CSS for international clients, from concept to deployment.\n2. Optimized performance and cross-browser compatibility to ensure consistent experiences across all devices.\n3. Managed direct client relationships, translating their needs into functional, user-centered visual solutions."
+      "description": "1. Designed and built websites with React and HTML/CSS for international clients — concept to deployment.\n2. Optimized cross-browser performance to ensure consistent experience on all devices.\n3. Managed client relationships directly, translating requirements into user-centered visual solutions."
     },
     "5": {
       "title": "Web Layout Developer",
       "company": "EDteam",
       "period": "Nov 2020 - Jan 2021",
-      "description": "1. Built visual components from existing designs, maintaining fidelity to detail and consistency with the product's identity.\n2. Identified and corrected layout errors, ensuring visual consistency across environments.\n3. Collaborated on transforming static designs into functional interfaces, contributing to the team's quality standards."
+      "description": "1. Built visual components from existing designs with high fidelity to product identity.\n2. Identified and fixed layout errors, ensuring visual consistency across environments.\n3. Transformed static designs into functional interfaces, contributing to team quality standards."
     }
   },
   "Education": {

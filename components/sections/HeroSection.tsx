@@ -24,16 +24,12 @@ export function HeroSection() {
         <h1 className="hero-name">
           {personalInfo.name.split(' ')[0]} {personalInfo.name.split(' ')[1]}
           <span className="hero-handle">&nbsp;/{personalInfo.username}</span>
-        </h1> 
+        </h1>
         <p className="hero-title">{t('role')}</p>
+        <p className="hero-tagline">{t('tagline')}</p>
 
         <p className="hero-desc">
           {t('description')}
-        </p>
-        <p className="hero-desc">
-          {t.rich('description2', {
-            strong: (chunks) => <strong>{chunks}</strong>,
-          })}
         </p>
 
         <div className="status-pill">
@@ -42,22 +38,19 @@ export function HeroSection() {
         </div>
 
         <div className="hero-actions">
-          <a href={`mailto:${personalInfo.email}`} className="btn btn-primary">
-            {t('getInTouch')}
+          <a href={`mailto:${personalInfo.email}`} className="btn btn-cta-primary">
+            {t('letsWork')}
           </a>
+          <Link href="/experience" className="btn btn-cta-secondary">
+            {t('viewExperience')}
+          </Link>
           <button
             onClick={handleCopyEmail}
-            className="btn btn-primary"
+            className="btn btn-cta-ghost"
             aria-label="Copy email address"
           >
-            {copied ? '✓ COPIED' : 'COPY EMAIL'}
+            {copied ? '✓ Copied' : t('copyEmail')}
           </button>
-        </div>
-
-        <div style={{ marginTop: '20px' }}>
-          <Link href="/experience" className="hero-link">
-            {t('viewWork')}
-          </Link>
         </div>
 
         <ExperienceTimeline />
