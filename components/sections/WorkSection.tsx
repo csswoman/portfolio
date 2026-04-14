@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { getProjects } from '@/lib/constants';
 import { GlitchCard } from '@/components/ui/GlitchCard';

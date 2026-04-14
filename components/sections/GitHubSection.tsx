@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
@@ -21,6 +21,7 @@ function LoadingPlaceholder() {
 
 export function GitHubSection() {
   const [hoveredText, setHoveredText] = useState<string | null>(null);
+  const [colorScheme, setColorScheme] = useState<'dark' | 'light'>('dark');
 
   const transformDataWithHover = (contributions: any[]) => {
     return contributions.map((activity) => ({
@@ -32,6 +33,19 @@ export function GitHubSection() {
       }).toUpperCase()}`,
     }));
   };
+
+  useEffect(() => {
+    const updateTheme = () => {
+      const theme = document.documentElement.getAttribute('data-theme') as 'dark' | 'light' || 'dark';
+      setColorScheme(theme);
+    };
+
+    updateTheme();
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleBlockRender = (block: any, activity: any) => {
     return React.cloneElement(block, {
@@ -46,7 +60,7 @@ export function GitHubSection() {
         <div className="github-calendar-wrapper">
           <GitHubCalendar
             username="csswoman"
-            colorScheme="dark"
+            colorScheme={colorScheme}
             year="last"
             blockSize={10}
             blockMargin={2}

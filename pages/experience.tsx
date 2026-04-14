@@ -32,17 +32,17 @@ export default function Experience() {
         })}
       </Head>
       <Header />
-      <main className="container">
-        <div style={{ paddingTop: '60px', paddingBottom: '40px' }}>
-          <Link href="/" className="btn">
+      <main className="mx-auto w-full max-w-2xl px-4 sm:px-6">
+        <div className="py-8">
+          <Link href="/" className="inline-flex items-center text-accent hover:text-orange transition-colors">
             ← {currentLocale === 'es' ? 'VOLVER' : 'BACK'}
           </Link>
         </div>
 
-        <section className="section">
-          <h1 className="section-label">EXPERIENCE</h1>
+        <section className="space-y-8 sm:space-y-12">
+          <h1 className="text-xl sm:text-2xl font-bold text-text-primary uppercase tracking-wide">EXPERIENCE</h1>
 
-          <div className="exp-list">
+          <div className="space-y-6 sm:space-y-8">
             {workExperience.map((exp) => {
               const bullets = exp.description
                 .split('\n')
@@ -50,29 +50,31 @@ export default function Experience() {
                 .filter(Boolean);
 
               return (
-                <div key={exp.id} className="exp-item">
-                  <div className="exp-header">
-                    <div className="exp-role-block">
-                      {COMPANY_LOGOS[exp.id] && (
-                        <a href={COMPANY_LOGOS[exp.id]} target="_blank" rel="noopener noreferrer">
-                          <Image src={COMPANY_LOGOS[exp.id]} alt={exp.company} width={24} height={24} />
-                        </a>
-                      )}
-                      <span className="exp-role">{exp.title}</span>
-                      {exp.companyUrl ? (
-                        <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="exp-company-link underline">
-                          — {exp.company}
-                        </a>
-                      ) : (
-                        <span className="exp-company">— {exp.company}</span>
-                      )}
+                <div key={exp.id} className="border border-border-subtle rounded-md p-4 sm:p-6 bg-bg-card hover:border-border-light transition-colors">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="flex flex-col gap-2 sm:gap-3 flex-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        {COMPANY_LOGOS[exp.id] && (
+                          <a href={COMPANY_LOGOS[exp.id]} target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
+                            <Image src={COMPANY_LOGOS[exp.id]} alt={exp.company} width={24} height={24} />
+                          </a>
+                        )}
+                        <span className="font-semibold text-text-primary text-sm sm:text-base">{exp.title}</span>
+                        {exp.companyUrl ? (
+                          <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-accent transition-colors underline text-sm sm:text-base">
+                            — {exp.company}
+                          </a>
+                        ) : (
+                          <span className="text-text-secondary text-sm sm:text-base">— {exp.company}</span>
+                        )}
+                      </div>
                     </div>
-                    <span className="exp-period">{exp.period}</span>
+                    <span className="text-text-muted text-xs sm:text-sm whitespace-nowrap flex-shrink-0">{exp.period}</span>
                   </div>
-                  <ul className="exp-bullets">
+                  <ul className="mt-4 sm:mt-5 space-y-2 sm:space-y-3">
                     {bullets.map((bullet: string, i: number) => (
-                      <li key={i} className="exp-bullet">
-                        <span className="exp-bullet-arrow">→</span>
+                      <li key={i} className="flex items-start gap-2 text-text-secondary text-sm sm:text-base">
+                        <span className="text-accent flex-shrink-0 mt-0.5">→</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -82,13 +84,13 @@ export default function Experience() {
             })}
           </div>
 
-          <div style={{ marginTop: '48px' }}>
+          <div>
             <a
               href={cvPath}
               download
               target="_blank"
               rel="noreferrer"
-              className="btn btn-cta-primary"
+              className="btn-secondary"
             >
               {currentLocale === 'es' ? 'DESCARGAR CV' : 'DOWNLOAD CV'}
             </a>

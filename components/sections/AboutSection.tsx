@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations, useLocale } from 'next-intl';
 import { getWorkExperience, cvPaths } from '@/lib/constants';
 import { trackCVDownload } from '@/lib/analytics';
@@ -71,7 +73,7 @@ export function AboutSection() {
             target="_blank"
             rel="noreferrer"
             onClick={handleCVDownload}
-            className="inline-flex items-center gap-1.5 py-2.5 px-4.5 border border-[var(--accent)] text-[var(--accent)] bg-transparent text-[12px] font-medium uppercase tracking-[0.5px] transition-all duration-200 hover:bg-[var(--accent-dim)] hover:shadow-[0_0_12px_rgba(183,142,219,0.25)] hover:scale-[1.02] rounded-md"
+            className="btn-primary"
           >
             {t('About.downloadCV')}
           </a>

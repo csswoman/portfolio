@@ -1,3 +1,5 @@
+'use client';
+
 import { getWorkExperience } from '@/lib/constants';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -73,7 +75,9 @@ return (
         </div>
       </div>
     </div>
-    <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-r from-transparent to-[#0a0a0a] to-80% z-20" />
+    <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-20" style={{
+      background: 'linear-gradient(to right, transparent, var(--bg-deep) 80%)'
+    }} />
     <Link
       href="/experience"
       className="absolute right-4 top-[16px] z-30 text-sm text-[var(--accent)] font-semibold tracking-[0.5px] whitespace-nowrap hover:text-[var(--orange)]"

@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { personalInfo } from '@/lib/constants';
 import Link from 'next/link';
@@ -38,15 +40,15 @@ export function HeroSection() {
         </div>
 
         <div className="flex items-center gap-4 flex-wrap mb-6">
-          <a href={`mailto:${personalInfo.email}`} className="inline-flex items-center gap-1.5 py-2.5 px-4.5 border border-[var(--accent)] text-[var(--accent)] bg-transparent text-[12px] font-medium uppercase tracking-[0.5px] transition-all duration-200 hover:bg-[var(--accent-dim)] hover:shadow-[0_0_10px_rgba(183,142,219,0.2)] hover:scale-[1.02] rounded-md">
+          <a href={`mailto:${personalInfo.email}`} className="btn-primary">
             {t('letsWork')}
           </a>
-          <Link href="/experience" className="inline-flex items-center gap-1.5 py-2.5 px-4.5 border border-[var(--accent)] text-[var(--accent)] bg-transparent text-[12px] font-medium uppercase tracking-[0.5px] transition-all duration-200 hover:bg-[var(--accent-dim)] hover:shadow-[0_0_10px_rgba(183,142,219,0.2)] hover:scale-[1.02] rounded-md">
+          <Link href="/experience" className="btn-primary">
             {t('viewExperience')}
           </Link>
           <button
             onClick={handleCopyEmail}
-            className="inline-flex items-center gap-1.5 py-2.5 px-4.5 border border-[var(--border-medium)] text-[var(--text-muted)] bg-transparent text-[11px] tracking-[0.3px] uppercase font-medium transition-all duration-200 hover:scale-[1.02] hover:text-[var(--text-secondary)] rounded-md"
+            className="btn-secondary"
             aria-label="Copy email address"
           >
             {copied ? '✓ Copied' : t('copyEmail')}

@@ -1,16 +1,20 @@
-import { useTranslations, useLocale } from 'next-intl';
+'use client';
+
+import { useLocale } from 'next-intl';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
+function getInitialTheme(): 'dark' | 'light' {
+  if (typeof window === 'undefined') return 'dark';
+  return (localStorage.getItem('theme') as 'dark' | 'light') || 'dark';
+}
+
 export function Header() {
-  const t = useTranslations('Header');
   const locale = useLocale();
   const router = useRouter();
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    if (typeof window === 'undefined') return 'dark';
-    return (localStorage.getItem('theme') as 'dark' | 'light') || 'dark';
-  });
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => getInitialTheme());
+  const [isClient] = useState(() => typeof window !== 'undefined');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -35,7 +39,7 @@ export function Header() {
           <button
             onClick={toggleTheme}
             className="bg-transparent border-none cursor-pointer p-1 transition-transform duration-300 hover:scale-120 active:scale-95 text-[18px] leading-none"
-            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            aria-label={isClient ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme') : 'Toggle theme'}
           >
             {theme === 'dark' ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
