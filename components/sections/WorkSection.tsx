@@ -8,9 +8,9 @@ export function WorkSection() {
   const projects = getProjects(t);
 
   return (
-    <section id="work" className="py-16">
-      <div className="max-w-3xl mx-auto px-5">
-        <div className="text-[10px] tracking-[2px] uppercase text-[var(--text-dim)] mb-10 font-medium">MY WORK</div>
+    <section id="work" className="mb-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="tracking-[2px] uppercase text-[var(--text-dim)] mb-4 font-medium">MY WORK</div>
         <div className="flex flex-col gap-4">
           {projects.map((project) => (
             <Link

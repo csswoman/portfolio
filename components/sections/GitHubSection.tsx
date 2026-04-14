@@ -41,9 +41,8 @@ export function GitHubSection() {
   };
 
   return (
-    <section className="py-16">
-      <div className="max-w-3xl mx-auto px-5">
-
+    <section className="mt-8">
+      <div className="max-w-3xl">
         <div className="github-calendar-wrapper">
           <GitHubCalendar
             username="csswoman"
