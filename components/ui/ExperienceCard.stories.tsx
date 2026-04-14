@@ -31,7 +31,7 @@ export const SeniorRole: Story = {
     experience: {
       id: 2,
       title: "Web UI Developer",
-      company: "Denomades",
+      company: "Nomades",
       period: "May 2021 - Ago 2022 (1 año y 4 meses)",
       description:
         "Desarrollar y corregir funcionalidades en las diferentes plataformas de la empresa. Mejorar la UX del website con puntuación de 100 en accesibilidad en Lighthouse.",

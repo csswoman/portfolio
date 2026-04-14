@@ -10,7 +10,7 @@ import { useTranslations, useLocale } from 'next-intl';
 const COMPANY_LOGOS: Record<number, string> = {
   1: '/images/cultivate_logo.jpg',
   2: '/images/upwork_logo.jpg',
-  3: '/images/denomades_logo.jpg',
+  3: '/images/nomades_logo.jpg',
   4: '/images/upwork_logo.jpg',
   5: '/images/edteamlat_logo.jpg',
 };
@@ -59,7 +59,13 @@ export default function Experience() {
                         </a>
                       )}
                       <span className="exp-role">{exp.title}</span>
-                      <span className="exp-company">— {exp.company}</span>
+                      {exp.companyUrl ? (
+                        <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="exp-company-link underline">
+                          — {exp.company}
+                        </a>
+                      ) : (
+                        <span className="exp-company">— {exp.company}</span>
+                      )}
                     </div>
                     <span className="exp-period">{exp.period}</span>
                   </div>

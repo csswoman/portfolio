@@ -32,7 +32,7 @@ export function HeroSection() {
           {t('description')}
         </p>
 
-        <div className="inline-flex items-center gap-2  mb-6 text-[12px] text-[var(--accent)] tracking-[0.5px] uppercase font-medium">
+        <div className="inline-flex items-center gap-2  mb-6 text-[var(--accent)] tracking-[0.5px] uppercase font-medium">
           <span className="w-[6px] h-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-in-out_infinite]"></span>
           {t('status')}
         </div>

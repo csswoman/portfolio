@@ -27,11 +27,11 @@ export function Header() {
   };
 
   return (
-    <header className="flex justify-between items-center py-4 px-5 max-w-3xl mx-auto relative z-[1]">
+    <header className="flex justify-between items-center py-4 max-w-3xl mx-auto relative z-[1]">
         <Link href="/" className="font-bold text-[13px] text-[var(--text-primary)] tracking-[1px] uppercase">
           KARLA AGRAZ
         </Link>
-        <nav className="flex items-center">
+        <nav className="flex items-center gap-4">
           <button
             onClick={toggleTheme}
             className="bg-transparent border-none cursor-pointer p-1 transition-transform duration-300 hover:scale-120 active:scale-95 text-[18px] leading-none"

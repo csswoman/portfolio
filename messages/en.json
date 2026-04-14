@@ -11,7 +11,7 @@
     "tagline": "Focused on crafting precise, scalable interfaces.",
     "description": "Bridging design and engineering to ship high-quality product experiences.",
     "scrollDown": "See my work",
-    "status": "AVAILABLE FOR REMOTE WORK.",
+    "status": "AVAILABLE FOR REMOTE WORK",
     "letsWork": "Let's work together",
     "viewExperience": "View experience",
     "copyEmail": "Copy email"
@@ -73,30 +73,35 @@
     "1": {
       "title": "Software Engineer",
       "company": "Cultivate",
+      "companyUrl": "https://cultivatepcg.com/",
       "period": "Apr 2023 - Present",
       "description": "1. Built scalable micro-frontend architecture with React & TypeScript — used across multiple client teams.\n2. Led full frontend of a new client-facing platform (Laravel integration), from 0 to production.\n3. Created UI component system + responsive email templates aligned to product design guidelines.\n4. Bridged design and engineering — translating complex specs into pixel-perfect delivery."
     },
     "2": {
       "title": "Web Designer",
       "company": "Upwork",
+      "companyUrl": "https://www.upwork.com/freelancers/~01166b5e7aa5d43752",
       "period": "Nov 2022 - Sept 2023",
       "description": "1. Designed and built custom WordPress interfaces tailored to individual client goals and brand.\n2. Integrated plugins strategically, extending functionality without impacting performance.\n3. Mentored early-stage students 1:1 in HTML, CSS, and JavaScript fundamentals.\n4. Improved component layout and usability for HubSpot-based projects."
     },
     "3": {
       "title": "Web UI Developer",
-      "company": "Denomades",
+      "company": "Nomades",
+      "companyUrl": "https://www.nomades.com/",
       "period": "May 2021 - Aug 2022",
       "description": "1. Developed and maintained features across multiple internal platforms used daily by the full team.\n2. Led codebase migration and refactoring — measurably improved readability and maintainability.\n3. Redesigned the main site's experience, achieving a perfect 100/100 Lighthouse accessibility score.\n4. Created Figma UX/UI mockups used as direct spec by the dev team.\n5. Built and documented a reusable UI component system (buttons, menus, inputs, etc.).\n6. Served as frontend reference across teams — primary point of contact for UI decisions."
     },
     "4": {
       "title": "Freelance Web Designer",
       "company": "Upwork",
+      "companyUrl": "https://www.upwork.com/freelancers/~01166b5e7aa5d43752",
       "period": "Dec 2021 - Mar 2022",
       "description": "1. Designed and built websites with React and HTML/CSS for international clients — concept to deployment.\n2. Optimized cross-browser performance to ensure consistent experience on all devices.\n3. Managed client relationships directly, translating requirements into user-centered visual solutions."
     },
     "5": {
       "title": "Web Layout Developer",
       "company": "EDteam",
+      "companyUrl": "https://ed.team/",
       "period": "Nov 2020 - Jan 2021",
       "description": "1. Built visual components from existing designs with high fidelity to product identity.\n2. Identified and fixed layout errors, ensuring visual consistency across environments.\n3. Transformed static designs into functional interfaces, contributing to team quality standards."
     }

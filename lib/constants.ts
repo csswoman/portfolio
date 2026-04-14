@@ -68,6 +68,7 @@ export const getWorkExperience = (t: any): WorkExperience[] => {
     id,
     title: t(`Experience.${id}.title`),
     company: t(`Experience.${id}.company`),
+    companyUrl: t(`Experience.${id}.companyUrl`),
     period: t(`Experience.${id}.period`),
     description: t(`Experience.${id}.description`),
   }));
