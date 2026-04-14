@@ -27,14 +27,14 @@ export function Header() {
   };
 
   return (
-    <header className="flex justify-between p-4">
-        <Link href="/" className="logo">
+    <header className="flex justify-between items-center py-4 px-5 max-w-3xl mx-auto relative z-[1]">
+        <Link href="/" className="font-bold text-[13px] text-[var(--text-primary)] tracking-[1px] uppercase">
           KARLA AGRAZ
         </Link>
-        <nav className="flex">
+        <nav className="flex items-center">
           <button
             onClick={toggleTheme}
-            className="theme-toggle"
+            className="bg-transparent border-none cursor-pointer p-1 transition-transform duration-300 hover:scale-120 active:scale-95 text-[18px] leading-none"
             aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
           >
             {theme === 'dark' ? (
@@ -55,17 +55,17 @@ export function Header() {
               </svg>
             )}
           </button>
-          <div className="lang-switcher">
+          <div className="flex gap-3 text-[11px] tracking-[0.5px]">
             <button
               onClick={() => changeLanguage('es')}
-              className={locale === 'es' ? 'active' : ''}
+              className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] p-0 font-[var(--font-mono)] text-[11px] uppercase ${locale === 'es' ? 'text-[var(--accent)]' : ''}`}
               aria-label="Cambiar a español"
             >
               [ES]
             </button>
             <button
               onClick={() => changeLanguage('en')}
-              className={locale === 'en' ? 'active' : ''}
+              className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] p-0 font-[var(--font-mono)] text-[11px] uppercase ${locale === 'en' ? 'text-[var(--accent)]' : ''}`}
               aria-label="Switch to English"
             >
               [EN]

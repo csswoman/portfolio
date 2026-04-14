@@ -11,17 +11,8 @@ const GitHubCalendar = dynamic(
 
 function LoadingPlaceholder() {
   return (
-    <div style={{
-      padding: '16px',
-      background: 'var(--bg-card)',
-      borderRadius: 'var(--radius-md)',
-      border: '1px solid var(--border-light)',
-      minHeight: '120px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}>
-      <span style={{ color: 'var(--text-muted)', fontSize: '12px', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+    <div className="p-4 bg-[var(--bg-card)] rounded-md border border-[var(--border-light)] min-h-[120px] flex items-center justify-center">
+      <span className="text-[var(--text-muted)] text-[12px] tracking-[0.5px] uppercase">
         Loading...
       </span>
     </div>
@@ -50,8 +41,8 @@ export function GitHubSection() {
   };
 
   return (
-    <section className="github-section">
-      <div className="container">
+    <section className="py-16">
+      <div className="max-w-3xl mx-auto px-5">
 
         <div className="github-calendar-wrapper">
           <GitHubCalendar

@@ -12,16 +12,17 @@ export function ContactSection() {
   ];
 
   return (
-    <section className="section reveal" id="contact">
-      <div className="container">
-        <div className="section-label">ELSEWHERE</div>
-        <div className="links-row">
+    <section className="py-16 relative z-[1]" id="contact">
+      <div className="max-w-3xl mx-auto px-5">
+        <div className="text-[10px] tracking-[2px] uppercase text-[var(--text-dim)] mb-10 font-medium">ELSEWHERE</div>
+        <div className="flex gap-6 flex-wrap">
           {links.map((link) => (
             <a
               key={link.label}
               href={link.href}
               target={link.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+              className="inline-flex items-center gap-1.5 text-[12px] text-[var(--accent)] tracking-[0.5px] uppercase transition-colors duration-300 hover:text-[var(--orange)] border-b border-b-transparent hover:border-b-[var(--orange)]"
             >
               {link.label}
             </a>

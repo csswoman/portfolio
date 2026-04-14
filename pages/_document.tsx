@@ -13,10 +13,9 @@ export default function Document(props: DocumentProps) {
           crossOrigin="anonymous"
         />
       </Head>
-      <body>
+      <body >
         <Main />
         <NextScript />
-        {/* Aplicar tema guardado inmediatamente para evitar flash */}
         <script
           dangerouslySetInnerHTML={{
             __html: `

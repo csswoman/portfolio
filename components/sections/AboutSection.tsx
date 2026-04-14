@@ -24,7 +24,7 @@ export function AboutSection() {
   return (
     <>
       {/* Stats Strip */}
-      <section className="section reveal container">
+      <section className="py-16 relative z-[1] max-w-3xl mx-auto px-5">
         <div className="stats-strip">
           {stats.map((stat, i) => (
             <div key={i} className="stat-item">
@@ -36,30 +36,42 @@ export function AboutSection() {
       </section>
 
       {/* Experience */}
-      <section className="section reveal container" id="about">
-        <div className="section-label">
+      <section className="py-16 relative z-[1] max-w-3xl mx-auto px-5" id="about">
+        <div className="text-[10px] tracking-[2px] uppercase text-[var(--text-dim)] mb-10 font-medium">
           <span className="star">★</span> {t('About.experience')}
         </div>
-        <div className="exp-list">
+        <div className="flex flex-col gap-0">
           {workExperience.map((exp) => (
-            <div key={exp.id} className="exp-item">
-              <div className="exp-date">{exp.period}</div>
-              <div>
-                <div className="exp-company">{exp.company}</div>
-                <div className="exp-role">{exp.title}</div>
+            <div key={exp.id} className="py-8 border-b border-[var(--border-light)] first:pt-0">
+              <div className="flex justify-between items-baseline gap-4 flex-wrap mb-4">
+                <div className="flex items-baseline gap-1.5 flex-wrap">
+                  <span className="text-[14px] font-semibold text-[var(--text-primary)] tracking-[0.3px]">{exp.title}</span>
+                  <span className="text-[13px] font-normal text-[var(--text-secondary)] tracking-[0.2px]">— {exp.company}</span>
+                </div>
+                <span className="text-[11px] text-[var(--text-dim)] tracking-[0.8px] uppercase whitespace-nowrap flex-shrink-0">{exp.period}</span>
               </div>
-              <span className="exp-tag">{exp.company}</span>
+              <ul className="list-none flex flex-col gap-2">
+                {exp.description.split('\n').map((line: string, i: number) => {
+                  const bullet = line.replace(/^\d+\.\s*/, '').trim();
+                  return bullet ? (
+                    <li key={i} className="flex items-start gap-2.5 text-[13px] leading-[1.6] text-[var(--text-secondary)]">
+                      <span className="text-[var(--accent)] flex-shrink-0 text-[12px] mt-px opacity-70">→</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ) : null;
+                })}
+              </ul>
             </div>
           ))}
         </div>
-        <div className="pt-8">
+        <div className="pt-10">
           <a
             href={cvPath}
             download
             target="_blank"
             rel="noreferrer"
             onClick={handleCVDownload}
-            className="btn btn-primary"
+            className="inline-flex items-center gap-1.5 py-2.5 px-4.5 border border-[var(--accent)] text-[var(--accent)] bg-transparent text-[12px] font-medium uppercase tracking-[0.5px] transition-all duration-200 hover:bg-[var(--accent-dim)] hover:shadow-[0_0_12px_rgba(183,142,219,0.25)] hover:scale-[1.02] rounded-md"
           >
             {t('About.downloadCV')}
           </a>

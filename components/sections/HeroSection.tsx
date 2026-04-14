@@ -19,34 +19,34 @@ export function HeroSection() {
   };
 
   return (
-    <section className="hero">
-      <div className="container">
-        <h1 className="hero-name">
+    <section className="pt-10 pb-16">
+      <div className="max-w-3xl mx-auto px-5">
+        <h1 className="text-[40px] font-bold text-[var(--text-primary)] mb-3 -tracking-[1px] uppercase flex items-center">
           {personalInfo.name.split(' ')[0]} {personalInfo.name.split(' ')[1]}
-          <span className="hero-handle">&nbsp;/{personalInfo.username}</span>
+          <span className="text-[13px] text-[var(--text-muted)] uppercase tracking-[0.5px]">&nbsp;/{personalInfo.username}</span>
         </h1>
-        <p className="hero-title">{t('role')}</p>
-        <p className="hero-tagline">{t('tagline')}</p>
+        <p className="text-[13px] font-semibold text-[var(--text-primary)] mb-2 tracking-[2px] uppercase">{t('role')}</p>
+        <p className="text-[14px] font-normal text-[var(--text-muted)] mb-6 tracking-[0.2px]">{t('tagline')}</p>
 
-        <p className="hero-desc">
+        <p className="text-[14px] leading-[1.7] text-[var(--text-secondary)] mb-8 max-w-[520px]">
           {t('description')}
         </p>
 
-        <div className="status-pill">
-          <span className="dot"></span>
+        <div className="inline-flex items-center gap-2 py-2 px-3 mb-6 text-[12px] text-[var(--accent)] tracking-[0.5px] uppercase font-medium">
+          <span className="w-[6px] h-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-in-out_infinite]"></span>
           {t('status')}
         </div>
 
-        <div className="hero-actions">
-          <a href={`mailto:${personalInfo.email}`} className="btn btn-cta-primary">
+        <div className="flex items-center gap-4 flex-wrap mb-6">
+          <a href={`mailto:${personalInfo.email}`} className="inline-flex items-center gap-1.5 py-2.5 px-4.5 border border-[var(--accent)] text-[var(--accent)] bg-transparent text-[12px] font-medium uppercase tracking-[0.5px] transition-all duration-200 hover:bg-[var(--accent-dim)] hover:shadow-[0_0_10px_rgba(183,142,219,0.2)] hover:scale-[1.02] rounded-md">
             {t('letsWork')}
           </a>
-          <Link href="/experience" className="btn btn-cta-secondary">
+          <Link href="/experience" className="inline-flex items-center gap-1.5 py-2.5 px-4.5 border border-[var(--accent)] text-[var(--accent)] bg-transparent text-[12px] font-medium uppercase tracking-[0.5px] transition-all duration-200 hover:bg-[var(--accent-dim)] hover:shadow-[0_0_10px_rgba(183,142,219,0.2)] hover:scale-[1.02] rounded-md">
             {t('viewExperience')}
           </Link>
           <button
             onClick={handleCopyEmail}
-            className="btn btn-cta-ghost"
+            className="inline-flex items-center gap-1.5 py-2.5 px-4.5 border border-[var(--border-medium)] text-[var(--text-muted)] bg-transparent text-[11px] tracking-[0.3px] uppercase font-medium transition-all duration-200 hover:scale-[1.02] hover:text-[var(--text-secondary)] rounded-md"
             aria-label="Copy email address"
           >
             {copied ? '✓ Copied' : t('copyEmail')}

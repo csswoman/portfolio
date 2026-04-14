@@ -142,7 +142,7 @@ export const personalInfo: PersonalInfo = {
   name: "Karla Agraz",
   username: "@csswoman",
   title: "UX Engineer",
-  email: "dev.csswoman@gmail.com",
+  email: "karlavagraze@gmail.com",
   heroImage: "/images/5.jpg",
   aboutImage: "/images/4.jpg",
   contactImage: "/images/3.jpg",

@@ -69,7 +69,8 @@ export function GlitchCard({
 
   const content = (
     <div
-      className={`holo-card relative rounded-xl border border-[var(--border-light)] hover:border-transparent bg-[var(--bg-card)] p-4 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${className}`}
+      className={`holo-card relative rounded-md w-full border border-[var(--border-light)] hover:border-transparent bg-[var(--bg-card)] cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${className}`}
+      style={{ padding: "8px" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -79,7 +80,7 @@ export function GlitchCard({
         </span>
       )}
       <p
-        className="mb-2 font-bold text-sm tracking-wider text-[var(--accent)] uppercase font-mono"
+        className="font-bold text-sm tracking-wider text-[var(--accent)] uppercase font-mono"
         style={{ fontFamily: "var(--font-mono)" }}
       >
         {glitchTitle}
