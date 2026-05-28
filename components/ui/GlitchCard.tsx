@@ -10,10 +10,7 @@ function useGlitchText(originalText: string, active: boolean) {
   const frameRef = useRef(0);
 
   useEffect(() => {
-    if (!active) {
-      setDisplayText(originalText);
-      return;
-    }
+    if (!active) return;
 
     const totalFrames = 18;
     frameRef.current = 0;
@@ -45,7 +42,7 @@ function useGlitchText(originalText: string, active: boolean) {
     };
   }, [active, originalText]);
 
-  return displayText;
+  return active ? displayText : originalText;
 }
 
 interface GlitchCardProps {
@@ -54,6 +51,7 @@ interface GlitchCardProps {
   badge?: string;
   href?: string;
   className?: string;
+  'aria-label'?: string;
 }
 
 export function GlitchCard({
@@ -62,6 +60,7 @@ export function GlitchCard({
   badge,
   href,
   className = "",
+  "aria-label": ariaLabel,
 }: GlitchCardProps) {
   const [hovered, setHovered] = useState(false);
   const glitchTitle = useGlitchText(title, hovered);
@@ -69,10 +68,12 @@ export function GlitchCard({
 
   const content = (
     <div
+      role="article"
       className={`holo-card relative rounded-md w-full border border-[var(--border-light)] hover:border-transparent bg-[var(--bg-card)] cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${className}`}
       style={{ padding: "8px" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      aria-label={ariaLabel}
     >
       {badge && (
         <span className="absolute top-3 right-3 rounded-full border border-[var(--border-medium)] px-2 py-0.5 text-[10px] font-bold tracking-widest text-[var(--text-primary)] uppercase font-mono">
@@ -82,12 +83,14 @@ export function GlitchCard({
       <p
         className="font-bold text-sm tracking-wider text-[var(--accent)] uppercase font-mono"
         style={{ fontFamily: "var(--font-mono)" }}
+        aria-hidden="true"
       >
         {glitchTitle}
       </p>
       <p
         className="text-xs text-[var(--text-muted)] leading-relaxed font-mono"
         style={{ fontFamily: "var(--font-mono)" }}
+        aria-hidden="true"
       >
         {glitchDesc}
       </p>

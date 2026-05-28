@@ -32,10 +32,10 @@ export default function Experience() {
         })}
       </Head>
       <Header />
-      <main className="mx-auto w-full max-w-2xl px-4 sm:px-6">
+      <main className="mx-auto w-full max-w-2xl px-4 sm:px-6" id="main-content">
         <div className="py-8">
-          <Link href="/" className="inline-flex items-center text-accent hover:text-orange transition-colors">
-            ← {currentLocale === 'es' ? 'VOLVER' : 'BACK'}
+          <Link href="/" className="inline-flex items-center text-accent hover:text-orange transition-colors" aria-label="Back to home">
+            <span aria-hidden="true">←</span> {currentLocale === 'es' ? 'VOLVER' : 'BACK'}
           </Link>
         </div>
 
@@ -55,9 +55,9 @@ export default function Experience() {
                     <div className="flex flex-col gap-2 sm:gap-3 flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
                         {COMPANY_LOGOS[exp.id] && (
-                          <a href={COMPANY_LOGOS[exp.id]} target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
-                            <Image src={COMPANY_LOGOS[exp.id]} alt={exp.company} width={24} height={24} />
-                          </a>
+                          <span className="flex-shrink-0">
+                            <Image src={COMPANY_LOGOS[exp.id]} alt="" width={24} height={24} />
+                          </span>
                         )}
                         <span className="font-semibold text-text-primary text-sm sm:text-base">{exp.title}</span>
                         {exp.companyUrl ? (

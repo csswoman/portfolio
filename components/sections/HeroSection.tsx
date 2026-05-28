@@ -35,7 +35,7 @@ export function HeroSection() {
         </p>
 
         <div className="inline-flex items-center gap-2  mb-6 text-[var(--accent)] tracking-[0.5px] uppercase font-medium">
-          <span className="w-[6px] h-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-in-out_infinite]"></span>
+          <span className="w-[6px] h-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-in-out_infinite]" aria-hidden="true"></span>
           {t('status')}
         </div>
 
@@ -50,6 +50,8 @@ export function HeroSection() {
             onClick={handleCopyEmail}
             className="btn-secondary"
             aria-label="Copy email address"
+            aria-live="polite"
+            aria-atomic="true"
           >
             {copied ? '✓ Copied' : t('copyEmail')}
           </button>

@@ -21,7 +21,12 @@ export function ExperienceTimeline() {
 
 return (
   <div className="relative">
-    <div className="overflow-x-auto no-scrollbar pr-10">
+    <div 
+      className="overflow-x-auto no-scrollbar pr-10" 
+      tabIndex={0}
+      role="region"
+      aria-label="Experience timeline"
+    >
       <div className="relative py-5 min-w-[600px]">
         <div className="absolute top-[26px] left-0 right-0 h-px bg-gradient-to-r from-[var(--accent)] to-transparent -translate-y-px"></div>
         <div className="relative flex gap-6 snap-x snap-mandatory">
@@ -48,7 +53,7 @@ return (
                   {COMPANY_LOGOS[exp.id] && (
                     <Image
                       src={COMPANY_LOGOS[exp.id]}
-                      alt={exp.company}
+                      alt=""
                       width={24}
                       height={24}
                       className="rounded-sm object-cover flex-none shrink-0"
@@ -56,10 +61,10 @@ return (
                   )}
 
                   <div
-                    className={`font-semibold text-[var(--text-primary)] tracking-[0.5px] whitespace-nowrap ${
+                    className={`font-semibold tracking-[0.5px] whitespace-nowrap ${
                       exp.id === recentExperience[0].id
                         ? 'text-[var(--accent)]'
-                        : ''
+                        : 'text-text-primary'
                     }`}
                   >
                     {exp.company}
@@ -81,8 +86,9 @@ return (
     <Link
       href="/experience"
       className="absolute right-4 top-[16px] z-30 text-sm text-[var(--accent)] font-semibold tracking-[0.5px] whitespace-nowrap hover:text-[var(--orange)]"
+      aria-label="View all experience"
     >
-      ALL →
+      ALL <span aria-hidden="true">→</span>
     </Link>
   </div>
 );

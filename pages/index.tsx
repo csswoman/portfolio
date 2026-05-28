@@ -19,7 +19,7 @@ export default function Home() {
         })}
       </Head>
       <Header />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <GitHubSection />
         <ContactSection />

@@ -77,7 +77,7 @@ export function GitHubSection() {
             }}
             style={{
               fontFamily: 'var(--font-mono)',
-              color: 'var(--text-muted)',
+              color: 'var(--text-secondary)',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
             } as React.CSSProperties}

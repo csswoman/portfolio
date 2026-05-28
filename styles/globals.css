@@ -34,6 +34,29 @@
   --radius-sm: 4px;
   --radius-md: 6px;
   --transition: 0.3s ease;
+
+  /* Default to dark theme values to ensure variables are always defined */
+  --bg-deep: #0a0a0a;
+  --bg-primary: #111111;
+  --bg-card: #1a1a1a;
+  --bg-elevated: #222222;
+  --bg-hover: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #909090;
+  --text-dim: #878787;
+  --accent: #b78edb;
+  --accent-light: #d4a8e8;
+  --accent-dim: rgba(183, 142, 219, 0.1);
+  --accent-border: rgba(183, 142, 219, 0.3);
+  --accent-gold: #FFD700;
+  --accent-gold-dim: rgba(255, 215, 0, 0.1);
+  --aqua: #00FFFF;
+  --aqua-dim: rgba(0, 255, 255, 0.1);
+  --orange: #d084f0;
+  --border-subtle: rgba(255, 255, 255, 0.03);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
 }
 
 [data-theme="dark"] {
@@ -44,8 +67,8 @@
   --bg-hover: #2a2a2a;
   --text-primary: #ffffff;
   --text-secondary: #cccccc;
-  --text-muted: #888888;
-  --text-dim: #666666;
+  --text-muted: #909090;
+  --text-dim: #878787;
   --accent: #b78edb;
   --accent-light: #d4a8e8;
   --accent-dim: rgba(183, 142, 219, 0.1);
@@ -68,17 +91,17 @@
   --bg-hover: #dde0e3;
   --text-primary: #1a1a1a;
   --text-secondary: #4a4a4a;
-  --text-muted: #8a8a8a;
-  --text-dim: #b0b0b0;
+  --text-muted: #6b6b6b;
+  --text-dim: #6b6b6b;
   --accent: #7c3aed;
   --accent-light: #a78bfa;
   --accent-dim: rgba(124, 58, 237, 0.1);
   --accent-border: rgba(124, 58, 237, 0.3);
-  --accent-gold: #d4a017;
+  --accent-gold: #8a6500;
   --accent-gold-dim: rgba(212, 160, 23, 0.1);
-  --aqua: #0891b2;
+  --aqua: #0e7490;
   --aqua-dim: rgba(8, 145, 178, 0.1);
-  --orange: #a855f7;
+  --orange: #7e22ce;
   --border-subtle: rgba(0, 0, 0, 0.03);
   --border-light: rgba(0, 0, 0, 0.08);
   --border-medium: rgba(0, 0, 0, 0.15);
@@ -91,7 +114,6 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  data-theme: dark;
 }
 
 body {
@@ -268,7 +290,7 @@ a:hover {
   font-family: var(--font-mono) !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
-  color: var(--text-muted) !important;
+  color: var(--text-secondary) !important;
 }
 
 .react-activity-calendar__month-label,
@@ -277,7 +299,7 @@ a:hover {
   font-family: var(--font-mono) !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
-  color: var(--text-muted) !important;
+  color: var(--text-secondary) !important;
   font-size: 14px !important;
 }
 
@@ -340,6 +362,32 @@ a:hover {
   transform: scale(1.02);
 }
 
+/* FOCUS STYLES */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.holo-card:focus-within::before {
+  opacity: 0.9;
+  animation-play-state: running;
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* UTILITY */
 .no-scrollbar {
   -ms-overflow-style: none;
@@ -348,6 +396,30 @@ a:hover {
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }
 
 /* RESPONSIVE */

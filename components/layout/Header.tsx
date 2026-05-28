@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 
 function getInitialTheme(): 'dark' | 'light' {
@@ -10,11 +10,17 @@ function getInitialTheme(): 'dark' | 'light' {
   return (localStorage.getItem('theme') as 'dark' | 'light') || 'dark';
 }
 
+const emptySubscribe = () => () => {};
+
+function useIsClient() {
+  return useSyncExternalStore(emptySubscribe, () => true, () => false);
+}
+
 export function Header() {
   const locale = useLocale();
   const router = useRouter();
   const [theme, setTheme] = useState<'dark' | 'light'>(() => getInitialTheme());
-  const [isClient] = useState(() => typeof window !== 'undefined');
+  const isMounted = useIsClient();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -30,6 +36,9 @@ export function Header() {
     router.push(router.pathname, router.asPath, { locale: newLocale });
   };
 
+  // During SSR and hydration, use a neutral placeholder to avoid mismatch
+  const isDark = isMounted ? theme === 'dark' : true;
+
   return (
     <header className="flex justify-between items-center py-4 max-w-3xl mx-auto relative z-[1]">
         <Link href="/" className="font-bold text-[13px] text-[var(--text-primary)] tracking-[1px] uppercase">
@@ -39,9 +48,9 @@ export function Header() {
           <button
             onClick={toggleTheme}
             className="bg-transparent border-none cursor-pointer p-1 transition-transform duration-300 hover:scale-120 active:scale-95 text-[18px] leading-none"
-            aria-label={isClient ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme') : 'Toggle theme'}
+            aria-label={isMounted ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme') : 'Toggle theme'}
           >
-            {theme === 'dark' ? (
+            {isDark ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="4"/>
                 <line x1="12" y1="2" x2="12" y2="6"/>
@@ -64,6 +73,7 @@ export function Header() {
               onClick={() => changeLanguage('es')}
               className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] p-0 font-[var(--font-mono)] text-[11px] uppercase ${locale === 'es' ? 'text-[var(--accent)]' : ''}`}
               aria-label="Cambiar a español"
+              aria-pressed={locale === 'es'}
             >
               [ES]
             </button>
@@ -71,6 +81,7 @@ export function Header() {
               onClick={() => changeLanguage('en')}
               className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] p-0 font-[var(--font-mono)] text-[11px] uppercase ${locale === 'en' ? 'text-[var(--accent)]' : ''}`}
               aria-label="Switch to English"
+              aria-pressed={locale === 'en'}
             >
               [EN]
             </button>
