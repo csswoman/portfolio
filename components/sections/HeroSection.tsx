@@ -22,19 +22,19 @@ export function HeroSection() {
 
   return (
     <section className="pt-6 md:pt-10">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl md:text-[40px] mb-2 font-bold text-[var(--text-primary)] -tracking-[1px] uppercase flex items-center">
+      <div className="content-shell">
+        <h1 className="mb-2 flex items-center text-[clamp(2rem,5vw,2.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[var(--text-primary)] uppercase">
           {personalInfo.name.split(' ')[0]} {personalInfo.name.split(' ')[1]}
-          <span className="text-[13px] text-[var(--text-muted)] uppercase tracking-[0.5px]">&nbsp;/{personalInfo.username}</span>
+          <span className="text-label text-[var(--text-muted)]">&nbsp;/{personalInfo.username}</span>
         </h1>
-        <p className="text-[13px] font-semibold text-[var(--text-primary)] mb-4 tracking-[2px] uppercase">{t('role')}</p>
-        <p className="text-[14px] font-normal text-[var(--text-muted)] mb-6 tracking-[0.2px]">{t('tagline')}</p>
+        <p className="section-headline mb-4 text-[var(--text-primary)]">{t('role')}</p>
+        <p className="mb-6 text-[0.875rem] text-[var(--text-muted)]">{t('tagline')}</p>
 
-        <p className="text-[14px] leading-[1.7] text-[var(--text-secondary)] max-w-[520px] mb-2">
+        <p className="text-prose mb-2">
           {t('description')}
         </p>
 
-        <div className="inline-flex items-center gap-2  mb-6 text-[var(--accent)] tracking-[0.5px] uppercase font-medium">
+        <div className="text-label mb-6 inline-flex items-center gap-2 font-medium text-[var(--accent)]">
           <span className="w-[6px] h-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-out_infinite]" aria-hidden="true"></span>
           {t('status')}
         </div>

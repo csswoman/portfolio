@@ -19,7 +19,7 @@ const GitHubCalendar = dynamic(
 function LoadingPlaceholder({ label }: { label: string }) {
   return (
     <div className="p-4 bg-[var(--bg-card)] rounded-md border border-[var(--border-light)] min-h-[120px] flex items-center justify-center">
-      <span className="text-[var(--text-muted)] text-[12px] tracking-[0.5px] uppercase">
+      <span className="text-label text-[var(--text-muted)]">
         {label}
       </span>
     </div>
@@ -67,7 +67,7 @@ export function GitHubSection() {
 
   return (
     <section className="mt-8" aria-labelledby="github-section-title">
-      <div className="max-w-3xl">
+      <div className="content-shell">
         <h2 id="github-section-title" className="sr-only">
           {t('title')}
         </h2>

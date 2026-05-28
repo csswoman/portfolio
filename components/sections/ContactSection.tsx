@@ -1,33 +1,35 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { personalInfo } from '@/lib/constants';
+import { personalInfo, socialLinks } from '@/lib/constants';
 import { trackContactEmailClick, trackSocialLinkClick } from '@/lib/analytics';
 
 export function ContactSection() {
   const t = useTranslations();
 
   const links = [
-    { label: 'TWITTER', href: 'https://twitter.com/csswoman', type: 'social' as const },
-    { label: 'LINKEDIN', href: 'https://linkedin.com/in/karlaagraz', type: 'social' as const },
-    { label: 'GITHUB', href: 'https://github.com/csswoman', type: 'social' as const },
+    ...socialLinks.map((link) => ({
+      label: link.name.toUpperCase(),
+      href: link.url,
+      type: 'social' as const,
+    })),
     { label: t('Contact.email').toUpperCase(), href: `mailto:${personalInfo.email}`, type: 'email' as const },
   ];
 
   return (
     <section className="py-8 relative z-[1]" id="contact" aria-label={t('Contact.elsewhere')}>
-      <div className="max-w-3xl mx-auto">
-        <h2 className="tracking-[2px] uppercase text-[var(--text-dim)] mb-4 font-medium text-[14px]">
-          {t('Contact.elsewhere').toUpperCase()}
+      <div className="content-shell">
+        <h2 className="section-headline">
+          {t('Contact.elsewhere')}
         </h2>
-        <div className="flex gap-6 flex-wrap">
+        <div className="flex flex-wrap gap-6">
           {links.map((link) => (
             <a
               key={link.label}
               href={link.href}
               target={link.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-              className="inline-flex items-center gap-1.5 min-h-11 px-1 text-sm text-[var(--accent)] tracking-[0.5px] uppercase transition-colors duration-300 hover:text-[var(--orange)] border-b border-b-transparent hover:border-b-[var(--orange)]"
+              className="text-label inline-flex min-h-11 items-center gap-1.5 border-b border-b-transparent px-1 text-[var(--accent)] transition-colors duration-200 hover:border-b-[var(--orange)] hover:text-[var(--orange)]"
               aria-label={link.type === 'email' ? t('Contact.email') : `${link.label} ${t('Contact.social')}`}
               onClick={() => {
                 if (link.type === 'email') {

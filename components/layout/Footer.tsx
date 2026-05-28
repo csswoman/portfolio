@@ -6,7 +6,7 @@ export function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer className="my-4 mx-auto text-center text-[var(--text-muted)] text-[12px] tracking-[0.5px] uppercase">
+    <footer className="content-shell my-4 text-center text-label text-[var(--text-muted)]">
       {t('copyright', { year: new Date().getFullYear() })}
     </footer>
   );

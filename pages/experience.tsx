@@ -32,7 +32,7 @@ export default function Experience() {
         })}
       </Head>
       <Header />
-      <main className="mx-auto w-full max-w-2xl px-4 sm:px-6" id="main-content">
+      <main className="content-shell" id="main-content">
         <div className="py-8">
           <Link href="/" className="inline-flex items-center text-accent hover:text-orange transition-colors" aria-label={t('ExperiencePage.backToHome')}>
             <span aria-hidden="true">←</span> {t('ExperiencePage.back')}

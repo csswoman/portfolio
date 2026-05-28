@@ -42,8 +42,8 @@ export function Header() {
   const isDark = isMounted ? theme === 'dark' : true;
 
   return (
-    <header className="flex justify-between items-center py-4 max-w-3xl mx-auto relative z-[1]">
-        <Link href="/" className="font-bold text-[13px] text-[var(--text-primary)] tracking-[1px] uppercase" aria-label={tHeader('goToHome')}>
+    <header className="content-shell flex justify-between items-center py-4 relative z-[1]">
+        <Link href="/" className="text-label font-bold text-[var(--text-primary)]" aria-label={tHeader('goToHome')}>
           KARLA AGRAZ
         </Link>
         <nav className="flex items-center gap-4">
@@ -70,10 +70,10 @@ export function Header() {
               </svg>
             )}
           </button>
-          <div className="flex gap-1 text-[12px] tracking-[0.5px]">
+          <div className="flex gap-1">
             <button
               onClick={() => changeLanguage('es')}
-              className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] min-h-11 min-w-11 inline-flex items-center justify-center rounded-md font-[var(--font-mono)] text-[12px] uppercase ${locale === 'es' ? 'text-[var(--accent)]' : ''}`}
+              className={`text-label bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-200 hover:text-[var(--text-secondary)] min-h-11 min-w-11 inline-flex items-center justify-center rounded-md ${locale === 'es' ? 'text-[var(--accent)]' : ''}`}
               aria-label={t('localeEs')}
               aria-pressed={locale === 'es'}
             >
@@ -81,7 +81,7 @@ export function Header() {
             </button>
             <button
               onClick={() => changeLanguage('en')}
-              className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] min-h-11 min-w-11 inline-flex items-center justify-center rounded-md font-[var(--font-mono)] text-[12px] uppercase ${locale === 'en' ? 'text-[var(--accent)]' : ''}`}
+              className={`text-label bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-200 hover:text-[var(--text-secondary)] min-h-11 min-w-11 inline-flex items-center justify-center rounded-md ${locale === 'en' ? 'text-[var(--accent)]' : ''}`}
               aria-label={t('localeEn')}
               aria-pressed={locale === 'en'}
             >

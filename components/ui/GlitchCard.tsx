@@ -74,7 +74,7 @@ export function GlitchCard({
   const content = (
     <div
       className={`holo-card relative rounded-md w-full border border-[var(--border-light)] bg-[var(--bg-card)] transition-all duration-300 ${interactive ? "hover:border-transparent hover:-translate-y-0.5 motion-reduce:hover:translate-y-0" : ""} ${className}`}
-      style={{ padding: "8px" }}
+      style={{ padding: "var(--space-sm)" }}
     >
       {badge && (
         <span className="absolute top-3 right-3 rounded-full border border-[var(--border-medium)] px-2 py-0.5 text-[11px] font-bold tracking-widest text-[var(--text-primary)] uppercase font-mono">
