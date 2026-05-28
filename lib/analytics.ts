@@ -17,7 +17,14 @@ interface EventData {
   language?: string;
   projectName?: string;
   socialPlatform?: string;
-  [key: string]: any;
+  [key: string]: string | number | boolean | undefined;
+}
+
+interface AnalyticsWindow extends Window {
+  gtag?: (command: 'event', eventName: string, params?: Record<string, unknown>) => void;
+  va?: (command: 'track', eventName: string, params?: Record<string, unknown>) => void;
+  fbq?: (command: 'trackCustom', eventName: string, params?: Record<string, unknown>) => void;
+  plausible?: (eventName: string, options?: { props?: Record<string, unknown> }) => void;
 }
 
 /**
@@ -36,26 +43,26 @@ export function trackEvent(data: EventData) {
   }
 
   // 2. Google Analytics (si está configurado)
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', data.event, {
+  if (typeof window !== 'undefined' && (window as AnalyticsWindow).gtag) {
+    (window as AnalyticsWindow).gtag?.('event', data.event, {
       ...data,
       timestamp,
     });
   }
 
   // 3. Vercel Analytics (si está instalado)
-  if (typeof window !== 'undefined' && (window as any).va) {
-    (window as any).va('track', data.event, data);
+  if (typeof window !== 'undefined' && (window as AnalyticsWindow).va) {
+    (window as AnalyticsWindow).va?.('track', data.event, data);
   }
 
   // 4. Facebook Pixel (si está configurado)
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('trackCustom', data.event, data);
+  if (typeof window !== 'undefined' && (window as AnalyticsWindow).fbq) {
+    (window as AnalyticsWindow).fbq?.('trackCustom', data.event, data);
   }
 
   // 5. Plausible Analytics (si está configurado)
-  if (typeof window !== 'undefined' && (window as any).plausible) {
-    (window as any).plausible(data.event, { props: data });
+  if (typeof window !== 'undefined' && (window as AnalyticsWindow).plausible) {
+    (window as AnalyticsWindow).plausible?.(data.event, { props: data });
   }
 }
 

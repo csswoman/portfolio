@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
@@ -18,6 +18,8 @@ function useIsClient() {
 
 export function Header() {
   const locale = useLocale();
+  const t = useTranslations('A11y');
+  const tHeader = useTranslations('Header');
   const router = useRouter();
   const [theme, setTheme] = useState<'dark' | 'light'>(() => getInitialTheme());
   const isMounted = useIsClient();
@@ -41,14 +43,14 @@ export function Header() {
 
   return (
     <header className="flex justify-between items-center py-4 max-w-3xl mx-auto relative z-[1]">
-        <Link href="/" className="font-bold text-[13px] text-[var(--text-primary)] tracking-[1px] uppercase">
+        <Link href="/" className="font-bold text-[13px] text-[var(--text-primary)] tracking-[1px] uppercase" aria-label={tHeader('goToHome')}>
           KARLA AGRAZ
         </Link>
         <nav className="flex items-center gap-4">
           <button
             onClick={toggleTheme}
-            className="bg-transparent border-none cursor-pointer p-1 transition-transform duration-300 hover:scale-120 active:scale-95 text-[18px] leading-none"
-            aria-label={isMounted ? (theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme') : 'Toggle theme'}
+            className="bg-transparent border-none cursor-pointer min-h-11 min-w-11 inline-flex items-center justify-center rounded-md transition-transform duration-300 hover:scale-105 active:scale-95 text-[18px] leading-none"
+            aria-label={isMounted ? (theme === 'dark' ? t('themeLight') : t('themeDark')) : t('themeToggle')}
           >
             {isDark ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -68,19 +70,19 @@ export function Header() {
               </svg>
             )}
           </button>
-          <div className="flex gap-3 text-[11px] tracking-[0.5px]">
+          <div className="flex gap-1 text-[12px] tracking-[0.5px]">
             <button
               onClick={() => changeLanguage('es')}
-              className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] p-0 font-[var(--font-mono)] text-[11px] uppercase ${locale === 'es' ? 'text-[var(--accent)]' : ''}`}
-              aria-label="Cambiar a español"
+              className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] min-h-11 min-w-11 inline-flex items-center justify-center rounded-md font-[var(--font-mono)] text-[12px] uppercase ${locale === 'es' ? 'text-[var(--accent)]' : ''}`}
+              aria-label={t('localeEs')}
               aria-pressed={locale === 'es'}
             >
               [ES]
             </button>
             <button
               onClick={() => changeLanguage('en')}
-              className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] p-0 font-[var(--font-mono)] text-[11px] uppercase ${locale === 'en' ? 'text-[var(--accent)]' : ''}`}
-              aria-label="Switch to English"
+              className={`bg-transparent border-none text-[var(--text-muted)] cursor-pointer transition-colors duration-300 hover:text-[var(--text-secondary)] min-h-11 min-w-11 inline-flex items-center justify-center rounded-md font-[var(--font-mono)] text-[12px] uppercase ${locale === 'en' ? 'text-[var(--accent)]' : ''}`}
+              aria-label={t('localeEn')}
               aria-pressed={locale === 'en'}
             >
               [EN]

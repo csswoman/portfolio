@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
 @import "tailwindcss/utilities";
 
@@ -30,81 +29,107 @@
 }
 
 :root {
-  --font-mono: 'JetBrains Mono', monospace;
   --radius-sm: 4px;
   --radius-md: 6px;
   --transition: 0.3s ease;
+  --transition-fast: 200ms ease;
+  --grid-line-dark: rgba(255, 255, 255, 0.08);
+  --grid-line-light: rgba(0, 0, 0, 0.08);
+  --grid-slide-duration: 24s;
+  --btn-primary-shadow: 0 0 10px color-mix(in oklab, var(--accent) 38%, transparent);
+  --timeline-line-gradient: linear-gradient(to right, var(--accent), transparent);
+  --timeline-active-dot-shadow: 0 0 10px color-mix(in oklab, var(--accent) 42%, transparent);
+  --edge-fade-gradient: linear-gradient(to right, transparent, var(--bg-deep) 80%);
+  --holo-lilac: oklch(78% 0.12 305);
+  --holo-teal: oklch(82% 0.1 195);
+  --holo-blue: oklch(76% 0.1 255);
+  --holo-mint: oklch(88% 0.12 155);
+  --holo-yellow: oklch(92% 0.12 95);
+  --holo-pink: oklch(82% 0.12 350);
+  --holo-glow-a: 0 0 10px color-mix(in oklab, var(--holo-lilac) 30%, transparent), 0 4px 20px rgba(0, 0, 0, 0.35);
+  --holo-glow-b: 0 0 14px color-mix(in oklab, var(--holo-teal) 30%, transparent), 0 4px 20px rgba(0, 0, 0, 0.35);
+  --holo-glow-c: 0 0 12px color-mix(in oklab, var(--holo-pink) 30%, transparent), 0 4px 20px rgba(0, 0, 0, 0.35);
 
   /* Default to dark theme values to ensure variables are always defined */
-  --bg-deep: #0a0a0a;
-  --bg-primary: #111111;
-  --bg-card: #1a1a1a;
-  --bg-elevated: #222222;
-  --bg-hover: #2a2a2a;
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-muted: #909090;
-  --text-dim: #878787;
-  --accent: #b78edb;
-  --accent-light: #d4a8e8;
-  --accent-dim: rgba(183, 142, 219, 0.1);
-  --accent-border: rgba(183, 142, 219, 0.3);
-  --accent-gold: #FFD700;
-  --accent-gold-dim: rgba(255, 215, 0, 0.1);
-  --aqua: #00FFFF;
-  --aqua-dim: rgba(0, 255, 255, 0.1);
-  --orange: #d084f0;
-  --border-subtle: rgba(255, 255, 255, 0.03);
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.15);
+  --bg-deep: oklch(14.5% 0.012 298);
+  --bg-primary: oklch(17% 0.012 298);
+  --bg-card: oklch(21.5% 0.012 298);
+  --bg-elevated: oklch(24.5% 0.012 298);
+  --bg-hover: oklch(28% 0.014 298);
+  --text-primary: oklch(96.5% 0.008 298);
+  --text-secondary: oklch(84% 0.006 298);
+  --text-muted: oklch(63% 0.008 298);
+  --text-dim: oklch(59% 0.01 298);
+  --accent: oklch(72% 0.11 305);
+  --accent-light: oklch(80% 0.09 305);
+  --accent-dim: color-mix(in oklch, var(--accent) 12%, transparent);
+  --accent-border: color-mix(in oklch, var(--accent) 32%, transparent);
+  --accent-gold: oklch(86% 0.16 95);
+  --accent-gold-dim: color-mix(in oklch, var(--accent-gold) 12%, transparent);
+  --aqua: oklch(78% 0.12 195);
+  --aqua-dim: color-mix(in oklch, var(--aqua) 12%, transparent);
+  --orange: oklch(68% 0.14 310);
+  --border-subtle: oklch(100% 0 0 / 0.03);
+  --border-light: oklch(100% 0 0 / 0.08);
+  --border-medium: oklch(100% 0 0 / 0.15);
 }
 
 [data-theme="dark"] {
-  --bg-deep: #0a0a0a;
-  --bg-primary: #111111;
-  --bg-card: #1a1a1a;
-  --bg-elevated: #222222;
-  --bg-hover: #2a2a2a;
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-muted: #909090;
-  --text-dim: #878787;
-  --accent: #b78edb;
-  --accent-light: #d4a8e8;
-  --accent-dim: rgba(183, 142, 219, 0.1);
-  --accent-border: rgba(183, 142, 219, 0.3);
-  --accent-gold: #FFD700;
-  --accent-gold-dim: rgba(255, 215, 0, 0.1);
-  --aqua: #00FFFF;
-  --aqua-dim: rgba(0, 255, 255, 0.1);
-  --orange: #d084f0;
-  --border-subtle: rgba(255, 255, 255, 0.03);
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.15);
+  --bg-deep: oklch(14.5% 0.012 298);
+  --bg-primary: oklch(17% 0.012 298);
+  --bg-card: oklch(21.5% 0.012 298);
+  --bg-elevated: oklch(24.5% 0.012 298);
+  --bg-hover: oklch(28% 0.014 298);
+  --text-primary: oklch(96.5% 0.008 298);
+  --text-secondary: oklch(84% 0.006 298);
+  --text-muted: oklch(63% 0.008 298);
+  --text-dim: oklch(59% 0.01 298);
+  --accent: oklch(72% 0.11 305);
+  --accent-light: oklch(80% 0.09 305);
+  --accent-dim: color-mix(in oklch, var(--accent) 12%, transparent);
+  --accent-border: color-mix(in oklch, var(--accent) 32%, transparent);
+  --accent-gold: oklch(86% 0.16 95);
+  --accent-gold-dim: color-mix(in oklch, var(--accent-gold) 12%, transparent);
+  --aqua: oklch(78% 0.12 195);
+  --aqua-dim: color-mix(in oklch, var(--aqua) 12%, transparent);
+  --orange: oklch(68% 0.14 310);
+  --border-subtle: oklch(100% 0 0 / 0.03);
+  --border-light: oklch(100% 0 0 / 0.08);
+  --border-medium: oklch(100% 0 0 / 0.15);
 }
 
 [data-theme="light"] {
-  --bg-deep: #f8f9fa;
-  --bg-primary: #ffffff;
-  --bg-card: #f0f1f3;
-  --bg-elevated: #e8e9eb;
-  --bg-hover: #dde0e3;
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b6b6b;
-  --text-dim: #6b6b6b;
-  --accent: #7c3aed;
-  --accent-light: #a78bfa;
-  --accent-dim: rgba(124, 58, 237, 0.1);
-  --accent-border: rgba(124, 58, 237, 0.3);
-  --accent-gold: #8a6500;
-  --accent-gold-dim: rgba(212, 160, 23, 0.1);
-  --aqua: #0e7490;
-  --aqua-dim: rgba(8, 145, 178, 0.1);
-  --orange: #7e22ce;
-  --border-subtle: rgba(0, 0, 0, 0.03);
-  --border-light: rgba(0, 0, 0, 0.08);
-  --border-medium: rgba(0, 0, 0, 0.15);
+  --bg-deep: oklch(98% 0.006 298);
+  --bg-primary: oklch(99% 0.004 298);
+  --bg-card: oklch(95.5% 0.006 298);
+  --bg-elevated: oklch(93% 0.008 298);
+  --bg-hover: oklch(90% 0.01 298);
+  --text-primary: oklch(22% 0.01 298);
+  --text-secondary: oklch(38% 0.01 298);
+  --text-muted: oklch(48% 0.012 298);
+  --text-dim: oklch(48% 0.012 298);
+  --accent: oklch(52% 0.2 305);
+  --accent-light: oklch(62% 0.16 305);
+  --accent-dim: color-mix(in oklch, var(--accent) 10%, transparent);
+  --accent-border: color-mix(in oklch, var(--accent) 28%, transparent);
+  --accent-gold: oklch(48% 0.12 85);
+  --accent-gold-dim: color-mix(in oklch, var(--accent-gold) 12%, transparent);
+  --aqua: oklch(45% 0.1 195);
+  --aqua-dim: color-mix(in oklch, var(--aqua) 10%, transparent);
+  --orange: oklch(46% 0.18 310);
+  --border-subtle: oklch(0% 0 0 / 0.03);
+  --border-light: oklch(0% 0 0 / 0.08);
+  --border-medium: oklch(0% 0 0 / 0.15);
+  --grid-slide-duration: 30s;
+  --holo-lilac: oklch(62% 0.16 305);
+  --holo-teal: oklch(72% 0.12 195);
+  --holo-blue: oklch(72% 0.1 255);
+  --holo-mint: oklch(78% 0.1 155);
+  --holo-yellow: oklch(82% 0.14 95);
+  --holo-pink: oklch(78% 0.12 350);
+  --holo-glow-a: 0 0 10px color-mix(in oklab, var(--holo-lilac) 25%, transparent), 0 4px 16px rgba(25, 25, 25, 0.08);
+  --holo-glow-b: 0 0 14px color-mix(in oklab, var(--holo-teal) 25%, transparent), 0 4px 16px rgba(25, 25, 25, 0.08);
+  --holo-glow-c: 0 0 12px color-mix(in oklab, var(--holo-pink) 25%, transparent), 0 4px 16px rgba(25, 25, 25, 0.08);
 }
 
 *, *::before, *::after {
@@ -117,7 +142,7 @@ html {
 }
 
 body {
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), ui-monospace, monospace;
   background: var(--bg-deep);
   color: var(--text-secondary);
   font-size: 14px;
@@ -136,22 +161,28 @@ body::before {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-dark) 1px, transparent 1px);
   background-size: 50px 50px;
   mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
   pointer-events: none;
   z-index: 0;
-  animation: gridSlide 3s linear infinite;
+  animation: none;
+  will-change: auto;
 }
 
-[data-theme="light"] body::before,
-[data-theme="light"]::before {
+[data-theme="light"] body::before {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  animation: gridSlide 3s linear infinite;
+    linear-gradient(var(--grid-line-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-light) 1px, transparent 1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-motion-pause]) body::before {
+    animation: gridSlide var(--grid-slide-duration) linear infinite;
+    will-change: background-position;
+  }
 }
 
 main, header, footer {
@@ -189,9 +220,9 @@ a:hover {
 }
 
 @keyframes holo-glow {
-  0%,  100% { box-shadow: 0 0 10px rgba(207, 166, 255, 0.22), 0 4px 20px rgba(0,0,0,0.35); }
-  33%        { box-shadow: 0 0 14px rgba(127, 231, 231, 0.22), 0 4px 20px rgba(0,0,0,0.35); }
-  66%        { box-shadow: 0 0 12px rgba(255, 179, 209, 0.22), 0 4px 20px rgba(0,0,0,0.35); }
+  0%, 100% { box-shadow: var(--holo-glow-a); }
+  33% { box-shadow: var(--holo-glow-b); }
+  66% { box-shadow: var(--holo-glow-c); }
 }
 
 @keyframes pulse {
@@ -210,14 +241,6 @@ a:hover {
 }
 
 :root {
-  --holo-lilac:  #CFA6FF;
-  --holo-teal:   #7FE7E7;
-  --holo-blue:   #8FB8FF;
-  --holo-mint:   #A8FFCF;
-  --holo-yellow: #FFF3A3;
-  --holo-pink:   #FFB3D1;
-
-  /* 6-stop gradient, wraps back to start for seamless looping */
   --holo-gradient: linear-gradient(
     135deg,
     var(--holo-lilac)  0%,
@@ -262,7 +285,7 @@ a:hover {
 }
 
 .holo-card:hover {
-  animation: holo-glow 4s ease infinite;
+  animation: holo-glow 5s ease-out infinite;
 }
 
 .holo-card:hover::before {
@@ -287,7 +310,7 @@ a:hover {
 }
 
 .react-activity-calendar {
-  font-family: var(--font-mono) !important;
+  font-family: var(--font-mono), ui-monospace, monospace !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   color: var(--text-secondary) !important;
@@ -296,7 +319,7 @@ a:hover {
 .react-activity-calendar__month-label,
 .react-activity-calendar__weekday-label,
 .react-activity-calendar__count {
-  font-family: var(--font-mono) !important;
+  font-family: var(--font-mono), ui-monospace, monospace !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   color: var(--text-secondary) !important;
@@ -307,7 +330,7 @@ a:hover {
   background-color: var(--tooltip-bg) !important;
   color: var(--tooltip-text) !important;
   border: 1px solid var(--tooltip-border) !important;
-  font-family: var(--font-mono) !important;
+  font-family: var(--font-mono), ui-monospace, monospace !important;
   font-size: 12px !important;
   letter-spacing: 0.5px !important;
   text-transform: uppercase !important;
@@ -323,7 +346,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 1.5;
-  padding: 2.5px 4px;
+  padding: 8px 12px;
   border: 1px solid var(--accent);
   color: var(--accent);
   background: transparent;
@@ -332,12 +355,12 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border-radius: 0.375rem;
-  transition: all 200ms;
+  transition: transform 200ms, background-color 200ms, box-shadow 200ms, color 200ms;
 }
 
 .btn-primary:hover {
   background-color: var(--accent-dim);
-  box-shadow: 0 0 10px rgba(183, 142, 219, 0.2);
+  box-shadow: var(--btn-primary-shadow);
   transform: scale(1.02);
 }
 
@@ -345,16 +368,16 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 1.5;
-  padding: 2.5px 4px;
+  padding: 8px 12px;
   border: 1px solid var(--border-medium);
   color: var(--text-muted);
   background: transparent;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.3px;
   border-radius: 0.375rem;
-  transition: all 200ms;
+  transition: transform var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .btn-secondary:hover {
@@ -386,6 +409,46 @@ a:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  body::before {
+    animation: none !important;
+    will-change: auto !important;
+  }
+}
+
+html[data-motion-pause] body::before {
+  animation-play-state: paused;
+  will-change: auto;
+}
+
+html[data-motion-pause] .holo-card:hover {
+  animation: none;
+}
+
+html[data-motion-pause] .holo-card:hover::before {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  body::before {
+    animation: none;
+    will-change: auto;
+  }
+}
+
+/* Timeline */
+.timeline-line {
+  background: var(--timeline-line-gradient);
+}
+
+.timeline-dot-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: var(--timeline-active-dot-shadow);
+}
+
+.timeline-fade-edge {
+  background: var(--edge-fade-gradient);
 }
 
 /* UTILITY */

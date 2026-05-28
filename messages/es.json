@@ -14,7 +14,9 @@
     "status": "DISPONIBLE PARA TRABAJO REMOTO",
     "letsWork": "Trabajemos juntas",
     "viewExperience": "Ver experiencia",
-    "copyEmail": "Copiar email"
+    "copyEmail": "Copiar email",
+    "copyEmailAria": "Copiar dirección de correo",
+    "emailCopied": "Correo copiado"
   },
   "Work": {
     "title": "Mi Trabajo",
@@ -45,15 +47,48 @@
     "social": "Social",
     "elsewhere": "Redes"
   },
+  "GitHub": {
+    "title": "Actividad en GitHub",
+    "loading": "Cargando actividad...",
+    "contributionOne": "{count} contribución el {date}",
+    "contributionMany": "{count} contribuciones el {date}",
+    "totalContributions": "{{count}} contribuciones en el último año"
+  },
+  "ExperiencePage": {
+    "title": "Experiencia",
+    "seoTitle": "Experiencia — Karla Agraz",
+    "seoDescription": "Experiencia profesional y trayectoria de carrera.",
+    "back": "VOLVER",
+    "all": "TODA",
+    "viewAllExperience": "Ver toda la experiencia",
+    "downloadCV": "DESCARGAR CV",
+    "experienceTimeline": "Línea de tiempo de experiencia",
+    "timelineScrollHint": "Lista desplazable: usa las flechas izquierda y derecha para ver más experiencias.",
+    "backToHome": "Volver al inicio"
+  },
   "Footer": {
     "rights": "Todos los derechos reservados",
     "madeWith": "Hecho con",
-    "by": "por"
+    "by": "por",
+    "copyright": "© {year} Karla Agraz"
   },
   "Error": {
     "notFound": "Página no encontrada",
     "serverError": "Ha ocurrido un error en el servidor",
-    "goHome": "Volver al inicio"
+    "goHome": "Volver al inicio",
+    "seo404Title": "404 — Página no encontrada",
+    "seo404Description": "La página que buscas no existe.",
+    "seoErrorTitle": "{statusCode} — Error",
+    "seoErrorDescription": "Ha ocurrido un error al cargar esta página."
+  },
+  "A11y": {
+    "skipToMain": "Saltar al contenido principal",
+    "themeLight": "Cambiar a tema claro",
+    "themeDark": "Cambiar a tema oscuro",
+    "themeToggle": "Cambiar tema",
+    "localeEs": "Cambiar a español",
+    "localeEn": "Cambiar a inglés",
+    "socialLink": "Visitar {name}"
   },
   "Projects": {
     "1": {

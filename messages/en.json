@@ -14,7 +14,9 @@
     "status": "AVAILABLE FOR REMOTE WORK",
     "letsWork": "Let's work together",
     "viewExperience": "View experience",
-    "copyEmail": "Copy email"
+    "copyEmail": "Copy email",
+    "copyEmailAria": "Copy email address",
+    "emailCopied": "Email copied"
   },
   "Work": {
     "title": "My Work",
@@ -45,15 +47,48 @@
     "social": "Social",
     "elsewhere": "Social"
   },
+  "GitHub": {
+    "title": "GitHub activity",
+    "loading": "Loading activity...",
+    "contributionOne": "{count} contribution on {date}",
+    "contributionMany": "{count} contributions on {date}",
+    "totalContributions": "{{count}} contributions in the last year"
+  },
+  "ExperiencePage": {
+    "title": "Experience",
+    "seoTitle": "Experience — Karla Agraz",
+    "seoDescription": "Professional experience and career journey.",
+    "back": "BACK",
+    "all": "ALL",
+    "viewAllExperience": "View all experience",
+    "downloadCV": "DOWNLOAD CV",
+    "experienceTimeline": "Experience timeline",
+    "timelineScrollHint": "Scrollable list: use the left and right arrow keys to see more roles.",
+    "backToHome": "Back to home"
+  },
   "Footer": {
     "rights": "All rights reserved",
     "madeWith": "Made with",
-    "by": "by"
+    "by": "by",
+    "copyright": "© {year} Karla Agraz"
   },
   "Error": {
     "notFound": "Page not found",
     "serverError": "A server error occurred",
-    "goHome": "Go back home"
+    "goHome": "Go back home",
+    "seo404Title": "404 — Page not found",
+    "seo404Description": "The page you are looking for does not exist.",
+    "seoErrorTitle": "{statusCode} — Error",
+    "seoErrorDescription": "Something went wrong while loading this page."
+  },
+  "A11y": {
+    "skipToMain": "Skip to main content",
+    "themeLight": "Switch to light theme",
+    "themeDark": "Switch to dark theme",
+    "themeToggle": "Toggle theme",
+    "localeEs": "Switch to Spanish",
+    "localeEn": "Switch to English",
+    "socialLink": "Visit {name}"
   },
   "Projects": {
     "1": {

@@ -55,7 +55,7 @@ pnpm build
 - **GitHub:** [@csswoman](https://github.com/csswoman)
 - **X:** [@csswoman](https://x.com/csswoman)
 - **LinkedIn:** [csswoman](https://linkedin.com/in/csswoman)
-- **Email:** dev.csswoman@gmail.com
+- **Email:** karlavagraze@gmail.com
 
 ---
 

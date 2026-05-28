@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 const GLITCH_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?~`";
 
@@ -63,34 +64,34 @@ export function GlitchCard({
   "aria-label": ariaLabel,
 }: GlitchCardProps) {
   const [hovered, setHovered] = useState(false);
-  const glitchTitle = useGlitchText(title, hovered);
-  const glitchDesc = useGlitchText(description, hovered);
+  const reducedMotion = usePrefersReducedMotion();
+  const glitchActive = hovered && !reducedMotion;
+  const glitchTitle = useGlitchText(title, glitchActive);
+  const glitchDesc = useGlitchText(description, glitchActive);
+  const interactive = Boolean(href);
+  const cardLabel = ariaLabel || title;
 
   const content = (
     <div
-      role="article"
-      className={`holo-card relative rounded-md w-full border border-[var(--border-light)] hover:border-transparent bg-[var(--bg-card)] cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${className}`}
+      className={`holo-card relative rounded-md w-full border border-[var(--border-light)] bg-[var(--bg-card)] transition-all duration-300 ${interactive ? "hover:border-transparent hover:-translate-y-0.5 motion-reduce:hover:translate-y-0" : ""} ${className}`}
       style={{ padding: "8px" }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      aria-label={ariaLabel}
     >
       {badge && (
-        <span className="absolute top-3 right-3 rounded-full border border-[var(--border-medium)] px-2 py-0.5 text-[10px] font-bold tracking-widest text-[var(--text-primary)] uppercase font-mono">
+        <span className="absolute top-3 right-3 rounded-full border border-[var(--border-medium)] px-2 py-0.5 text-[11px] font-bold tracking-widest text-[var(--text-primary)] uppercase font-mono">
           {badge}
         </span>
       )}
       <p
         className="font-bold text-sm tracking-wider text-[var(--accent)] uppercase font-mono"
-        style={{ fontFamily: "var(--font-mono)" }}
-        aria-hidden="true"
+        style={{ fontFamily: "var(--font-mono), ui-monospace, monospace" }}
+        aria-hidden={interactive}
       >
         {glitchTitle}
       </p>
       <p
         className="text-xs text-[var(--text-muted)] leading-relaxed font-mono"
-        style={{ fontFamily: "var(--font-mono)" }}
-        aria-hidden="true"
+        style={{ fontFamily: "var(--font-mono), ui-monospace, monospace" }}
+        aria-hidden={interactive}
       >
         {glitchDesc}
       </p>
@@ -99,11 +100,25 @@ export function GlitchCard({
 
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block cursor-pointer"
+        aria-label={cardLabel}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onFocus={() => setHovered(true)}
+        onBlur={() => setHovered(false)}
+      >
         {content}
       </a>
     );
   }
 
-  return content;
+  return (
+    <article aria-label={cardLabel}>
+      {content}
+    </article>
+  );
 }

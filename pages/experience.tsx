@@ -27,20 +27,20 @@ export default function Experience() {
     <>
       <Head>
         {generateNextSeo({
-          title: "Experience — Karla Agraz",
-          description: "Professional experience and career journey.",
+          title: t('ExperiencePage.seoTitle'),
+          description: t('ExperiencePage.seoDescription'),
         })}
       </Head>
       <Header />
       <main className="mx-auto w-full max-w-2xl px-4 sm:px-6" id="main-content">
         <div className="py-8">
-          <Link href="/" className="inline-flex items-center text-accent hover:text-orange transition-colors" aria-label="Back to home">
-            <span aria-hidden="true">←</span> {currentLocale === 'es' ? 'VOLVER' : 'BACK'}
+          <Link href="/" className="inline-flex items-center text-accent hover:text-orange transition-colors" aria-label={t('ExperiencePage.backToHome')}>
+            <span aria-hidden="true">←</span> {t('ExperiencePage.back')}
           </Link>
         </div>
 
         <section className="space-y-8 sm:space-y-12">
-          <h1 className="text-xl sm:text-2xl font-bold text-text-primary uppercase tracking-wide">EXPERIENCE</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-text-primary uppercase tracking-wide">{t('ExperiencePage.title')}</h1>
 
           <div className="space-y-6 sm:space-y-8">
             {workExperience.map((exp) => {
@@ -56,7 +56,7 @@ export default function Experience() {
                       <div className="flex items-center gap-2 flex-wrap">
                         {COMPANY_LOGOS[exp.id] && (
                           <span className="flex-shrink-0">
-                            <Image src={COMPANY_LOGOS[exp.id]} alt="" width={24} height={24} />
+                            <Image src={COMPANY_LOGOS[exp.id]} alt={`${exp.company} logo`} width={24} height={24} />
                           </span>
                         )}
                         <span className="font-semibold text-text-primary text-sm sm:text-base">{exp.title}</span>
@@ -90,9 +90,9 @@ export default function Experience() {
               download
               target="_blank"
               rel="noreferrer"
-              className="btn-secondary"
+              className="btn-secondary min-h-11 inline-flex items-center"
             >
-              {currentLocale === 'es' ? 'DESCARGAR CV' : 'DOWNLOAD CV'}
+              {t('ExperiencePage.downloadCV')}
             </a>
           </div>
         </section>

@@ -27,11 +27,13 @@ storybook-static
 # TypeScript
 *.tsbuildinfo
 
-# Documentación interna (solo README.md es público)
-PERFORMANCE.md
-TYPESCRIPT-SEO-STORYBOOK.md
-OPTIMIZACIONES-IMPLEMENTADAS.md
-MEJORAS.md
+# Agent skills y contexto local
+.agents/
+
+# Markdown (README y nota de CV siguen versionados)
+*.md
+!README.md
+!public/cv/README.md
 
 # CVs privados (mantener fuera del repositorio por privacidad)
 public/cv/*.pdf

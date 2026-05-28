@@ -15,8 +15,8 @@ export function HeroSection() {
       await navigator.clipboard.writeText(personalInfo.email);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy:', err);
+    } catch {
+      // No-op: clipboard can fail due to browser permissions.
     }
   };
 
@@ -35,25 +35,25 @@ export function HeroSection() {
         </p>
 
         <div className="inline-flex items-center gap-2  mb-6 text-[var(--accent)] tracking-[0.5px] uppercase font-medium">
-          <span className="w-[6px] h-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-in-out_infinite]" aria-hidden="true"></span>
+          <span className="w-[6px] h-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-out_infinite]" aria-hidden="true"></span>
           {t('status')}
         </div>
 
         <div className="flex items-center gap-4 flex-wrap mb-6">
-          <a href={`mailto:${personalInfo.email}`} className="btn-primary">
+          <a href={`mailto:${personalInfo.email}`} className="btn-primary min-h-11">
             {t('letsWork')}
           </a>
-          <Link href="/experience" className="btn-primary">
+          <Link href="/experience" className="btn-primary min-h-11">
             {t('viewExperience')}
           </Link>
           <button
             onClick={handleCopyEmail}
-            className="btn-secondary"
-            aria-label="Copy email address"
+            className="btn-secondary min-h-11"
+            aria-label={t('copyEmailAria')}
             aria-live="polite"
             aria-atomic="true"
           >
-            {copied ? '✓ Copied' : t('copyEmail')}
+            {copied ? `✓ ${t('emailCopied')}` : t('copyEmail')}
           </button>
         </div>
 

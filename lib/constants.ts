@@ -9,6 +9,8 @@ import type {
   PersonalInfo,
 } from "@/types";
 
+type TranslateFn = (key: string) => string;
+
 // ============================================
 // DATOS FIJOS (no traducibles)
 // ============================================
@@ -50,7 +52,7 @@ export const languageIds = ["spanish", "english"] as const;
  * @param t - Función de traducción de next-intl
  * @returns Array de proyectos traducidos
  */
-export const getProjects = (t: any): Project[] => {
+export const getProjects = (t: TranslateFn): Project[] => {
   return projectsData.map((project) => ({
     ...project,
     title: t(`Projects.${project.id}.title`),
@@ -63,7 +65,7 @@ export const getProjects = (t: any): Project[] => {
  * @param t - Función de traducción de next-intl
  * @returns Array de experiencias traducidas
  */
-export const getWorkExperience = (t: any): WorkExperience[] => {
+export const getWorkExperience = (t: TranslateFn): WorkExperience[] => {
   return workExperienceIds.map((id) => ({
     id,
     title: t(`Experience.${id}.title`),
@@ -79,7 +81,7 @@ export const getWorkExperience = (t: any): WorkExperience[] => {
  * @param t - Función de traducción de next-intl
  * @returns Array de educación traducida
  */
-export const getEducation = (t: any): Education[] => {
+export const getEducation = (t: TranslateFn): Education[] => {
   return educationIds.map((id) => ({
     id,
     title: t(`Education.${id}.title`),
@@ -93,7 +95,7 @@ export const getEducation = (t: any): Education[] => {
  * @param t - Función de traducción de next-intl
  * @returns Array de idiomas traducidos
  */
-export const getLanguages = (t: any): Language[] => {
+export const getLanguages = (t: TranslateFn): Language[] => {
   return languageIds.map((id) => ({
     name: t(`Languages.${id}.name`),
     level: t(`Languages.${id}.level`),

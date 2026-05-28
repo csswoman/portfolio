@@ -45,7 +45,7 @@ const SEO: DefaultSeoProps = {
     },
     {
       name: "theme-color",
-      content: "#03001e",
+      content: "#111111",
     },
   ],
   additionalLinkTags: [
