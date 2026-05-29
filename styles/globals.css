@@ -2,8 +2,9 @@
 @import "tailwindcss/utilities";
 
 @theme {
-  --font-display: var(--font-display), system-ui, sans-serif;
-  --font-body: var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-sans), system-ui, sans-serif;
+  --font-body: var(--font-sans), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
   --color-bg-deep: var(--bg-deep);
   --color-bg-primary: var(--bg-primary);
@@ -38,6 +39,16 @@
   --space-xl: 24px;
   /* 42rem: cabe el grid de GitHub (~634px) con padding lateral de 16px */
   --layout-max-width: 42rem;
+  --type-scale-ratio: 1.25;
+  --font-family-display: var(--font-sans), system-ui, sans-serif;
+  --font-family-body: var(--font-sans), system-ui, sans-serif;
+  --font-family-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --text-label: 0.75rem;
+  --text-body: 1rem;
+  --text-lead: 1.25rem;
+  --text-title: 1.5625rem;
+  --text-section: 1.953125rem;
+  --text-display: clamp(2.44140625rem, 5.5vw + 0.5rem, 3.8154296875rem);
   --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
   --transition: 0.3s var(--ease-out);
   --transition-fast: 200ms var(--ease-out);
@@ -160,10 +171,10 @@ html {
 }
 
 body {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-family-body);
   background: var(--bg-deep);
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: var(--text-body);
   line-height: 1.6;
   letter-spacing: 0.01em;
   transition: background var(--transition), color var(--transition);
@@ -179,16 +190,18 @@ body {
 
 .section-headline {
   margin-bottom: var(--space-lg);
-  font-size: 0.875rem;
+  font-family: var(--font-family-mono);
+  font-size: var(--text-label);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.3;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-dim);
 }
 
 .text-label {
-  font-size: 0.75rem;
+  font-family: var(--font-family-mono);
+  font-size: var(--text-label);
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: 0.04em;
@@ -196,10 +209,35 @@ body {
 }
 
 .text-prose {
-  font-size: 0.875rem;
+  font-family: var(--font-family-body);
+  font-size: var(--text-body);
   line-height: 1.6;
   color: var(--text-secondary);
   max-width: 65ch;
+}
+
+.hero-display {
+  font-family: var(--font-family-mono);
+  font-size: clamp(1.95rem, 4.2vw + 0.45rem, 3.05rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.hero-identity-line {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.hero-prose-strong {
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 body::before {
@@ -347,7 +385,7 @@ a:hover {
 }
 
 .react-activity-calendar {
-  font-family: var(--font-mono), ui-monospace, monospace !important;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   color: var(--text-secondary) !important;
@@ -356,7 +394,7 @@ a:hover {
 .react-activity-calendar__month-label,
 .react-activity-calendar__weekday-label,
 .react-activity-calendar__count {
-  font-family: var(--font-mono), ui-monospace, monospace !important;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   color: var(--text-secondary) !important;
@@ -367,7 +405,7 @@ a:hover {
   background-color: var(--tooltip-bg) !important;
   color: var(--tooltip-text) !important;
   border: 1px solid var(--tooltip-border) !important;
-  font-family: var(--font-mono), ui-monospace, monospace !important;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace !important;
   font-size: 12px !important;
   letter-spacing: 0.5px !important;
   text-transform: uppercase !important;
@@ -387,7 +425,8 @@ a:hover {
   border: 1px solid var(--accent);
   color: var(--accent);
   background: transparent;
-  font-size: 0.75rem;
+  font-family: var(--font-family-mono);
+  font-size: var(--text-label);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -417,7 +456,8 @@ a:hover {
   border: 1px solid var(--border-medium);
   color: var(--text-muted);
   background: transparent;
-  font-size: 0.75rem;
+  font-family: var(--font-family-mono);
+  font-size: var(--text-label);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;

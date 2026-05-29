@@ -83,14 +83,14 @@ export function GlitchCard({
       )}
       <p
         className="font-bold text-sm tracking-wider text-[var(--accent)] uppercase font-mono"
-        style={{ fontFamily: "var(--font-mono), ui-monospace, monospace" }}
+        style={{ fontFamily: "var(--font-jetbrains-mono), ui-monospace, monospace" }}
         aria-hidden={interactive}
       >
         {glitchTitle}
       </p>
       <p
         className="text-xs text-[var(--text-muted)] leading-relaxed font-mono"
-        style={{ fontFamily: "var(--font-mono), ui-monospace, monospace" }}
+        style={{ fontFamily: "var(--font-jetbrains-mono), ui-monospace, monospace" }}
         aria-hidden={interactive}
       >
         {glitchDesc}

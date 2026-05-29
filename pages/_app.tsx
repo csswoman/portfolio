@@ -7,6 +7,7 @@ import SEO from "@/lib/seo.config";
 import { NextIntlClientProvider } from 'next-intl';
 import { MotionController } from '@/components/MotionController';
 import { SkipLink } from '@/components/layout';
+import { inter } from '@/lib/fonts';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -17,10 +18,12 @@ export default function App({ Component, pageProps }: AppProps) {
       timeZone="America/Mexico_City"
       messages={pageProps.messages}
     >
-      <Head>{generateDefaultSeo(SEO)}</Head>
-      <SkipLink />
-      <MotionController />
-      <Component {...pageProps} />
+      <div className={inter.className}>
+        <Head>{generateDefaultSeo(SEO)}</Head>
+        <SkipLink />
+        <MotionController />
+        <Component {...pageProps} />
+      </div>
     </NextIntlClientProvider>
   );
 }

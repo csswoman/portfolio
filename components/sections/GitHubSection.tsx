@@ -83,14 +83,14 @@ export function GitHubSection() {
             showColorLegend={false}
             showTotalCount={true}
             labels={{
-              totalCount: hoveredText || t('totalContributions'),
+              totalCount: hoveredText || t.raw('totalContributions'),
             }}
             theme={{
               dark: ['var(--bg-card)', 'color-mix(in oklab, var(--accent) 30%, var(--bg-card))', 'color-mix(in oklab, var(--accent) 55%, var(--bg-card))', 'color-mix(in oklab, var(--accent) 80%, var(--bg-card))', 'var(--accent)'],
               light: ['var(--bg-card)', 'color-mix(in oklab, var(--accent) 30%, var(--bg-primary))', 'color-mix(in oklab, var(--accent) 50%, var(--bg-primary))', 'color-mix(in oklab, var(--accent) 70%, var(--bg-primary))', 'var(--accent)'],
             }}
             style={{
-              fontFamily: 'var(--font-mono), ui-monospace, monospace',
+              fontFamily: 'var(--font-jetbrains-mono), ui-monospace, monospace',
               color: 'var(--text-secondary)',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',

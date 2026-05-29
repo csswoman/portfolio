@@ -1,12 +1,16 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import type { DocumentProps } from "next/document";
-import { jetbrainsMono } from "@/lib/fonts";
+import { inter, jetbrainsMono } from "@/lib/fonts";
 
 export default function Document(props: DocumentProps) {
   return (
-    <Html lang={props.locale} className={jetbrainsMono.variable}>
+    <Html
+      lang={props.locale}
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <Head />
-      <body className={jetbrainsMono.className}>
+      <body>
         <Main />
         <NextScript />
         <script

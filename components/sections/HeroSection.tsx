@@ -21,25 +21,37 @@ export function HeroSection() {
   };
 
   return (
-    <section className="pt-6 md:pt-10">
+    <section className="pt-6 md:pt-10" aria-labelledby="hero-role">
       <div className="content-shell">
-        <h1 className="mb-2 flex items-center text-[clamp(2rem,5vw,2.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[var(--text-primary)] uppercase">
-          {personalInfo.name.split(' ')[0]} {personalInfo.name.split(' ')[1]}
-          <span className="text-label text-[var(--text-muted)]">&nbsp;/{personalInfo.username}</span>
-        </h1>
-        <p className="section-headline mb-4 text-[var(--text-primary)]">{t('role')}</p>
-        <p className="mb-6 text-[0.875rem] text-[var(--text-muted)]">{t('tagline')}</p>
+        <header className="mb-6">
+          <p className="hero-identity-line mb-3">
+            <span className="uppercase">{personalInfo.name}</span>
+            <span aria-hidden="true"> / </span>
+            <span>{personalInfo.username}</span>
+          </p>
+          <h1 id="hero-role" className="hero-display uppercase">
+            {t('role')}
+          </h1>
+        </header>
 
-        <p className="text-prose mb-2">
-          {t('description')}
-        </p>
+        <div className="mb-6 flex flex-col gap-5">
+          <p className="text-prose text-[var(--text-muted)]">{t('tagline')}</p>
+          <p className="text-prose">
+            {t.rich('description', {
+              strong: (chunks) => <strong className="hero-prose-strong">{chunks}</strong>,
+            })}
+          </p>
+        </div>
 
         <div className="text-label mb-6 inline-flex items-center gap-2 font-medium text-[var(--accent)]">
-          <span className="w-[6px] h-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-out_infinite]" aria-hidden="true"></span>
+          <span
+            className="h-[6px] w-[6px] rounded-full bg-[var(--accent)] animate-[pulse_2s_ease-out_infinite]"
+            aria-hidden="true"
+          />
           {t('status')}
         </div>
 
-        <div className="flex items-center gap-4 flex-wrap mb-6">
+        <div className="mb-6 flex flex-wrap items-center gap-4">
           <a href={`mailto:${personalInfo.email}`} className="btn-primary min-h-11">
             {t('letsWork')}
           </a>
