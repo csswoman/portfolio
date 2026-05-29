@@ -49,6 +49,7 @@
   },
   "GitHub": {
     "title": "Actividad en GitHub",
+    "scrollHint": "Gráfico desplazable: desliza horizontalmente o usa las flechas izquierda y derecha para ver el calendario completo.",
     "loading": "Cargando actividad...",
     "contributionOne": "{count} contribución el {date}",
     "contributionMany": "{count} contribuciones el {date}",
@@ -63,7 +64,7 @@
     "viewAllExperience": "Ver toda la experiencia",
     "downloadCV": "DESCARGAR CV",
     "experienceTimeline": "Línea de tiempo de experiencia",
-    "timelineScrollHint": "Lista desplazable: usa las flechas izquierda y derecha para ver más experiencias.",
+    "timelineScrollHint": "Lista desplazable: desliza horizontalmente o usa las flechas izquierda y derecha para ver más experiencias.",
     "backToHome": "Volver al inicio"
   },
   "Footer": {

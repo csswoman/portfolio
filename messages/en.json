@@ -49,6 +49,7 @@
   },
   "GitHub": {
     "title": "GitHub activity",
+    "scrollHint": "Scrollable chart: swipe horizontally or use the left and right arrow keys to see the full contribution grid.",
     "loading": "Loading activity...",
     "contributionOne": "{count} contribution on {date}",
     "contributionMany": "{count} contributions on {date}",
@@ -63,7 +64,7 @@
     "viewAllExperience": "View all experience",
     "downloadCV": "DOWNLOAD CV",
     "experienceTimeline": "Experience timeline",
-    "timelineScrollHint": "Scrollable list: use the left and right arrow keys to see more roles.",
+    "timelineScrollHint": "Scrollable list: swipe horizontally or use the left and right arrow keys to see more roles.",
     "backToHome": "Back to home"
   },
   "Footer": {

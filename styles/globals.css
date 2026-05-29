@@ -372,7 +372,16 @@ a:hover {
   --tooltip-bg: var(--bg-card);
   --tooltip-text: var(--text-primary);
   --tooltip-border: var(--border-light);
-  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .github-calendar-wrapper {
+    width: 100%;
+  }
+}
+
+.github-fade-edge-start {
+  background: linear-gradient(to left, transparent, var(--bg-deep) 80%);
 }
 
 .react-activity-calendar__scroll-container {
